@@ -1,0 +1,203 @@
+06/17/2024 12:11:15 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: True
+06/17/2024 12:11:15 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=1000.0,
+eval_strategy=no,
+evaluation_strategy=None,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0006,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_2000_v2/runs/Jun17_12-11-15_cn-g016.server.mila.quebec,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=cosine,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=2000.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_2000_v2,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=16,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=/network/scratch/z/zixuan.li/gpt2_ckpts_2000_v2,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=1000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=715,
+weight_decay=0.0,
+)
+06/17/2024 12:11:15 - WARNING - __main__ - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, 16-bits training: True
+06/17/2024 12:11:17 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+06/17/2024 12:11:17 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/17/2024 12:11:17 - INFO - datasets.builder - Found cached dataset wikitext (/home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3)
+06/17/2024 12:11:17 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/17/2024 12:11:17 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/17/2024 12:11:17 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/17/2024 12:11:18 - INFO - __main__ - Training new model from scratch - Total size=118.68M params
+06/17/2024 12:11:18 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-24f5302b824080b8.arrow
+06/17/2024 12:11:18 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-38a62f26547cea30.arrow
+06/17/2024 12:11:18 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-c75285d115ff6176.arrow
+06/17/2024 12:11:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-11021e805cc2f0aa.arrow
+06/17/2024 12:11:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-05e2d75c0aaf4f13.arrow
+06/17/2024 12:11:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-e8014a8ce34ae12b.arrow
+{'loss': 6.3001, 'grad_norm': 0.7866102457046509, 'learning_rate': 0.0004195804195804195, 'epoch': 6.85}
+{'loss': 4.0828, 'grad_norm': 0.788964033126831, 'learning_rate': 0.0005999943031105162, 'epoch': 13.7}
+{'loss': 2.4001, 'grad_norm': 0.9845978021621704, 'learning_rate': 0.0005999567806397036, 'epoch': 20.55}
+{'loss': 1.0835, 'grad_norm': 0.815263569355011, 'learning_rate': 0.00059988419487985, 'epoch': 27.4}
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Mon Jun 17 12:28:00 2024
+Driver Version                            : 535.161.08
+CUDA Version                              : 12.2
+
+Attached GPUs                             : 2
+GPU 00000000:01:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 3468510
+            GPU Utilization               : 92 %
+            Memory Utilization            : 64 %
+            Max memory usage              : 48970 MiB
+            Time                          : 0 ms
+            Is Running                    : 1
+
+GPU 00000000:81:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 3468511
+            GPU Utilization               : 92 %
+            Memory Utilization            : 64 %
+            Max memory usage              : 48970 MiB
+            Time                          : 0 ms
+            Is Running                    : 1
+
+Mon Jun 17 12:28:00 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.161.08             Driver Version: 535.161.08   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  | 00000000:01:00.0 Off |                    0 |
+| N/A   54C    P0             241W / 500W |  48978MiB / 81920MiB |     91%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          On  | 00000000:81:00.0 Off |                    0 |
+| N/A   56C    P0             328W / 500W |  48978MiB / 81920MiB |     91%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A   3468510      C   ...an.li/.conda/envs/new/bin/python3.9    48970MiB |
+|    1   N/A  N/A   3468511      C   ...an.li/.conda/envs/new/bin/python3.9    48970MiB |
++---------------------------------------------------------------------------------------+

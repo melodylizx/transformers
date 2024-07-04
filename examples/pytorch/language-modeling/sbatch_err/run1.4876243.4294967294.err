@@ -1,0 +1,56 @@
+Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+Found cached dataset wikitext (/home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3)
+Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 16:48:04,171 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 16:48:04,171 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 16:48:04,171 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 16:48:04,171 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 16:48:04,171 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 16:48:04,171 >> loading file tokenizer_config.json
+[INFO|configuration_utils.py:1000] 2024-06-15 16:48:04,269 >> Generate config GenerationConfig {
+  "bos_token_id": 50256,
+  "eos_token_id": 50256
+}
+
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-24f5302b824080b8.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-38a62f26547cea30.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-c75285d115ff6176.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-11021e805cc2f0aa.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-05e2d75c0aaf4f13.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-e8014a8ce34ae12b.arrow
+[INFO|trainer.py:2495] 2024-06-15 16:48:06,710 >> Loading model from /network/scratch/z/zixuan.li/gpt2_ckpts_1000/checkpoint-290000.
+[WARNING|trainer.py:2723] 2024-06-15 16:48:07,529 >> There were missing keys in the checkpoint model loaded: ['lm_head.weight'].
+[INFO|trainer.py:2108] 2024-06-15 16:48:08,863 >> ***** Running training *****
+[INFO|trainer.py:2109] 2024-06-15 16:48:08,863 >>   Num examples = 2,318
+[INFO|trainer.py:2110] 2024-06-15 16:48:08,863 >>   Num Epochs = 1,000
+[INFO|trainer.py:2111] 2024-06-15 16:48:08,863 >>   Instantaneous batch size per device = 8
+[INFO|trainer.py:2114] 2024-06-15 16:48:08,863 >>   Total train batch size (w. parallel, distributed & accumulation) = 8
+[INFO|trainer.py:2115] 2024-06-15 16:48:08,863 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:2116] 2024-06-15 16:48:08,863 >>   Total optimization steps = 290,000
+[INFO|trainer.py:2117] 2024-06-15 16:48:08,863 >>   Number of trainable parameters = 124,439,808
+[WARNING|logging.py:328] 2024-06-15 16:48:08,865 >> Warning: The following arguments do not match the ones in the `trainer_state.json` within the checkpoint directory: 
+	per_device_train_batch_size: 8 (from args) != 4 (from trainer_state.json)
+[INFO|trainer.py:2139] 2024-06-15 16:48:08,865 >>   Continuing training from checkpoint, will skip to saved global_step
+[INFO|trainer.py:2140] 2024-06-15 16:48:08,865 >>   Continuing training from epoch 1000
+[INFO|trainer.py:2141] 2024-06-15 16:48:08,865 >>   Continuing training from global step 290000
+[INFO|trainer.py:2143] 2024-06-15 16:48:08,865 >>   Will skip the first 1000 epochs then the first 0 batches in the first epoch.
+  0%|                                                                                           | 0/290000 [00:00<?, ?it/s][INFO|trainer.py:2363] 2024-06-15 16:48:08,867 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+                                                                                                                             0%|                                                                                           | 0/290000 [00:00<?, ?it/s]  0%|                                                                                           | 0/290000 [00:00<?, ?it/s]
+[INFO|trainer.py:3447] 2024-06-15 16:48:08,972 >> Saving model checkpoint to /network/scratch/z/zixuan.li/gpt2_ckpts_1000
+[INFO|configuration_utils.py:472] 2024-06-15 16:48:08,976 >> Configuration saved in /network/scratch/z/zixuan.li/gpt2_ckpts_1000/config.json
+[INFO|configuration_utils.py:769] 2024-06-15 16:48:08,977 >> Configuration saved in /network/scratch/z/zixuan.li/gpt2_ckpts_1000/generation_config.json
+[INFO|modeling_utils.py:2673] 2024-06-15 16:48:09,642 >> Model weights saved in /network/scratch/z/zixuan.li/gpt2_ckpts_1000/model.safetensors
+[INFO|tokenization_utils_base.py:2521] 2024-06-15 16:48:09,644 >> tokenizer config file saved in /network/scratch/z/zixuan.li/gpt2_ckpts_1000/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2530] 2024-06-15 16:48:09,646 >> Special tokens file saved in /network/scratch/z/zixuan.li/gpt2_ckpts_1000/special_tokens_map.json
+[INFO|trainer.py:3756] 2024-06-15 16:48:09,701 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:3758] 2024-06-15 16:48:09,701 >>   Num examples = 240
+[INFO|trainer.py:3761] 2024-06-15 16:48:09,701 >>   Batch size = 16
+/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+  0%|                                                                                               | 0/15 [00:00<?, ?it/s] 13%|███████████▌                                                                           | 2/15 [00:00<00:01,  8.23it/s] 20%|█████████████████▍                                                                     | 3/15 [00:00<00:02,  5.82it/s] 27%|███████████████████████▏                                                               | 4/15 [00:00<00:02,  5.06it/s] 33%|█████████████████████████████                                                          | 5/15 [00:00<00:02,  4.69it/s] 40%|██████████████████████████████████▊                                                    | 6/15 [00:01<00:02,  4.49it/s] 47%|████████████████████████████████████████▌                                              | 7/15 [00:01<00:01,  4.36it/s] 53%|██████████████████████████████████████████████▍                                        | 8/15 [00:01<00:01,  4.30it/s] 60%|████████████████████████████████████████████████████▏                                  | 9/15 [00:01<00:01,  4.25it/s] 67%|█████████████████████████████████████████████████████████▎                            | 10/15 [00:02<00:01,  4.22it/s] 73%|███████████████████████████████████████████████████████████████                       | 11/15 [00:02<00:00,  4.19it/s] 80%|████████████████████████████████████████████████████████████████████▊                 | 12/15 [00:02<00:00,  4.17it/s] 87%|██████████████████████████████████████████████████████████████████████████▌           | 13/15 [00:02<00:00,  4.16it/s] 93%|████████████████████████████████████████████████████████████████████████████████▎     | 14/15 [00:03<00:00,  4.16it/s]100%|██████████████████████████████████████████████████████████████████████████████████████| 15/15 [00:03<00:00,  4.24it/s]100%|██████████████████████████████████████████████████████████████████████████████████████| 15/15 [00:04<00:00,  3.70it/s]

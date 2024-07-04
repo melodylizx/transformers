@@ -1,0 +1,31 @@
+Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+Found cached dataset wikitext (/home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3)
+Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+[INFO|tokenization_utils_base.py:2106] 2024-06-13 17:42:38,363 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-13 17:42:38,364 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2106] 2024-06-13 17:42:38,364 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-13 17:42:38,364 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-13 17:42:38,364 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-13 17:42:38,364 >> loading file tokenizer_config.json
+[INFO|configuration_utils.py:1000] 2024-06-13 17:42:38,460 >> Generate config GenerationConfig {
+  "bos_token_id": 50256,
+  "eos_token_id": 50256
+}
+
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-24f5302b824080b8.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-38a62f26547cea30.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-c75285d115ff6176.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-11021e805cc2f0aa.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-05e2d75c0aaf4f13.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-e8014a8ce34ae12b.arrow
+Traceback (most recent call last):
+  File "/home/mila/z/zixuan.li/transformers/examples/pytorch/language-modeling/run_clm.py", line 654, in <module>
+    main()
+  File "/home/mila/z/zixuan.li/transformers/examples/pytorch/language-modeling/run_clm.py", line 602, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+  File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/trainer.py", line 1884, in train
+    self._load_from_checkpoint(resume_from_checkpoint)
+  File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/trainer.py", line 2493, in _load_from_checkpoint
+    raise ValueError(f"Can't find a valid checkpoint at {resume_from_checkpoint}")
+ValueError: Can't find a valid checkpoint at /network/scratch/z/zixuan.li/gpt2_ckpts_1000/checkpoint-166000

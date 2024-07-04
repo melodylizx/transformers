@@ -1,0 +1,138 @@
+W0615 20:11:00.778166 140272960137024 torch/distributed/run.py:757] 
+W0615 20:11:00.778166 140272960137024 torch/distributed/run.py:757] *****************************************
+W0615 20:11:00.778166 140272960137024 torch/distributed/run.py:757] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0615 20:11:00.778166 140272960137024 torch/distributed/run.py:757] *****************************************
+Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+Found cached dataset wikitext (/home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3)
+Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 20:11:07,003 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 20:11:07,003 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 20:11:07,003 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 20:11:07,003 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 20:11:07,003 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2106] 2024-06-15 20:11:07,003 >> loading file tokenizer_config.json
+[INFO|configuration_utils.py:1000] 2024-06-15 20:11:07,087 >> Generate config GenerationConfig {
+  "bos_token_id": 50256,
+  "eos_token_id": 50256
+}
+
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-24f5302b824080b8.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-38a62f26547cea30.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-c75285d115ff6176.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-11021e805cc2f0aa.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-05e2d75c0aaf4f13.arrow
+Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-e8014a8ce34ae12b.arrow
+[INFO|trainer.py:2108] 2024-06-15 20:11:09,714 >> ***** Running training *****
+[INFO|trainer.py:2109] 2024-06-15 20:11:09,714 >>   Num examples = 2,318
+[INFO|trainer.py:2110] 2024-06-15 20:11:09,714 >>   Num Epochs = 1,000
+[INFO|trainer.py:2111] 2024-06-15 20:11:09,714 >>   Instantaneous batch size per device = 32
+[INFO|trainer.py:2114] 2024-06-15 20:11:09,714 >>   Total train batch size (w. parallel, distributed & accumulation) = 64
+[INFO|trainer.py:2115] 2024-06-15 20:11:09,714 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:2116] 2024-06-15 20:11:09,714 >>   Total optimization steps = 37,000
+[INFO|trainer.py:2117] 2024-06-15 20:11:09,715 >>   Number of trainable parameters = 124,439,808
+  0%|                                                                                                              | 0/37000 [00:00<?, ?it/s][rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/mila/z/zixuan.li/transformers/examples/pytorch/language-modeling/run_clm.py", line 654, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/mila/z/zixuan.li/transformers/examples/pytorch/language-modeling/run_clm.py", line 602, in main
+[rank0]:     train_result = trainer.train(resume_from_checkpoint=checkpoint)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/trainer.py", line 1912, in train
+[rank0]:     return inner_training_loop(
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/trainer.py", line 2248, in _inner_training_loop
+[rank0]:     tr_loss_step = self.training_step(model, inputs)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/trainer.py", line 3275, in training_step
+[rank0]:     loss = self.compute_loss(model, inputs)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/trainer.py", line 3307, in compute_loss
+[rank0]:     outputs = model(**inputs)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1593, in forward
+[rank0]:     else self._run_ddp_forward(*inputs, **kwargs)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1411, in _run_ddp_forward
+[rank0]:     return self.module(*inputs, **kwargs)  # type: ignore[index]
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 1324, in forward
+[rank0]:     lm_logits = self.lm_head(hidden_states)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/linear.py", line 116, in forward
+[rank0]:     return F.linear(input, self.weight, self.bias)
+[rank0]: torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 6.14 GiB. GPU 
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/mila/z/zixuan.li/transformers/examples/pytorch/language-modeling/run_clm.py", line 654, in <module>
+[rank1]:     main()
+[rank1]:   File "/home/mila/z/zixuan.li/transformers/examples/pytorch/language-modeling/run_clm.py", line 602, in main
+[rank1]:     train_result = trainer.train(resume_from_checkpoint=checkpoint)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/trainer.py", line 1912, in train
+[rank1]:     return inner_training_loop(
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/trainer.py", line 2248, in _inner_training_loop
+[rank1]:     tr_loss_step = self.training_step(model, inputs)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/trainer.py", line 3275, in training_step
+[rank1]:     loss = self.compute_loss(model, inputs)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/trainer.py", line 3307, in compute_loss
+[rank1]:     outputs = model(**inputs)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1593, in forward
+[rank1]:     else self._run_ddp_forward(*inputs, **kwargs)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 1411, in _run_ddp_forward
+[rank1]:     return self.module(*inputs, **kwargs)  # type: ignore[index]
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 1324, in forward
+[rank1]:     lm_logits = self.lm_head(hidden_states)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:   File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/nn/modules/linear.py", line 116, in forward
+[rank1]:     return F.linear(input, self.weight, self.bias)
+[rank1]: torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 6.14 GiB. GPU  has a total capacity of 79.33 GiB of which 1.07 GiB is free. Including non-PyTorch memory, this process has 78.24 GiB memory in use. Of the allocated memory 77.11 GiB is allocated by PyTorch, and 322.11 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  0%|                                                                                                              | 0/37000 [00:01<?, ?it/s]
+E0615 20:11:15.808327 140272960137024 torch/distributed/elastic/multiprocessing/api.py:826] failed (exitcode: 1) local_rank: 0 (pid: 2104707) of binary: /home/mila/z/zixuan.li/.conda/envs/new/bin/python3.9
+Traceback (most recent call last):
+  File "/home/mila/z/zixuan.li/.conda/envs/new/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/distributed/run.py", line 879, in main
+    run(args)
+  File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/distributed/run.py", line 870, in run
+    elastic_launch(
+  File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/mila/z/zixuan.li/.conda/envs/new/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 263, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_clm.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2024-06-15_20:11:15
+  host      : cn-g013.server.mila.quebec
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 2104708)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-06-15_20:11:15
+  host      : cn-g013.server.mila.quebec
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 2104707)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

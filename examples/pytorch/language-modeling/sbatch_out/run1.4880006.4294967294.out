@@ -1,0 +1,1769 @@
+06/17/2024 12:29:07 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: True
+06/17/2024 12:29:07 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=5000.0,
+eval_strategy=no,
+evaluation_strategy=None,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0006,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_5000/runs/Jun17_12-29-07_cn-g016.server.mila.quebec,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=cosine,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=5000.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_5000,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=16,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=/network/scratch/z/zixuan.li/gpt2_ckpts_5000,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=5000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=715,
+weight_decay=0.0,
+)
+06/17/2024 12:29:07 - WARNING - __main__ - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, 16-bits training: True
+06/17/2024 12:29:08 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/17/2024 12:29:08 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+06/17/2024 12:29:08 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/17/2024 12:29:08 - INFO - datasets.builder - Found cached dataset wikitext (/home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3)
+06/17/2024 12:29:08 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/17/2024 12:29:08 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/17/2024 12:29:10 - INFO - __main__ - Training new model from scratch - Total size=118.68M params
+06/17/2024 12:29:10 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-24f5302b824080b8.arrow
+06/17/2024 12:29:10 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-38a62f26547cea30.arrow
+06/17/2024 12:29:10 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-c75285d115ff6176.arrow
+06/17/2024 12:29:11 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-11021e805cc2f0aa.arrow
+06/17/2024 12:29:11 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-05e2d75c0aaf4f13.arrow
+06/17/2024 12:29:11 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-e8014a8ce34ae12b.arrow
+{'loss': 6.3001, 'grad_norm': 0.7866102457046509, 'learning_rate': 0.0004195804195804195, 'epoch': 6.85}
+{'loss': 4.0828, 'grad_norm': 0.7809432744979858, 'learning_rate': 0.0005999990938545207, 'epoch': 13.7}
+{'loss': 2.3994, 'grad_norm': 0.9922296404838562, 'learning_rate': 0.0005999931254214041, 'epoch': 20.55}
+{'loss': 1.0847, 'grad_norm': 0.7872427701950073, 'learning_rate': 0.0005999815791257644, 'epoch': 27.4}
+{'loss': 0.4373, 'grad_norm': 0.6271916627883911, 'learning_rate': 0.0005999644551822853, 'epoch': 34.25}
+{'loss': 0.2428, 'grad_norm': 0.5030542612075806, 'learning_rate': 0.0005999417539093577, 'epoch': 41.1}
+{'loss': 0.1821, 'grad_norm': 0.5204762816429138, 'learning_rate': 0.0005999134757290729, 'epoch': 47.95}
+{'loss': 0.1579, 'grad_norm': 0.4807129204273224, 'learning_rate': 0.0005998796211672157, 'epoch': 54.79}
+{'loss': 0.1424, 'grad_norm': 0.4550977945327759, 'learning_rate': 0.0005998401908532542, 'epoch': 61.64}
+{'loss': 0.1319, 'grad_norm': 0.41420280933380127, 'learning_rate': 0.0005997951855203282, 'epoch': 68.49}
+{'loss': 0.1205, 'grad_norm': 0.3971683084964752, 'learning_rate': 0.0005997446060052353, 'epoch': 75.34}
+{'loss': 0.1124, 'grad_norm': 0.3669305145740509, 'learning_rate': 0.0005996884532484156, 'epoch': 82.19}
+{'loss': 0.1062, 'grad_norm': 0.34025850892066956, 'learning_rate': 0.0005996267282939344, 'epoch': 89.04}
+{'loss': 0.0974, 'grad_norm': 0.3727741539478302, 'learning_rate': 0.0005995594322894622, 'epoch': 95.89}
+{'loss': 0.0905, 'grad_norm': 0.33745935559272766, 'learning_rate': 0.0005994865664862538, 'epoch': 102.74}
+{'loss': 0.0865, 'grad_norm': 0.3320735692977905, 'learning_rate': 0.0005994081322391253, 'epoch': 109.59}
+{'loss': 0.0822, 'grad_norm': 0.3028123676776886, 'learning_rate': 0.0005993241310064281, 'epoch': 116.44}
+{'loss': 0.0775, 'grad_norm': 0.30828967690467834, 'learning_rate': 0.0005992345643500225, 'epoch': 123.29}
+{'loss': 0.0734, 'grad_norm': 0.2836751639842987, 'learning_rate': 0.0005991394339352481, 'epoch': 130.14}
+{'loss': 0.0693, 'grad_norm': 0.30704668164253235, 'learning_rate': 0.0005990387415308936, 'epoch': 136.99}
+{'loss': 0.0667, 'grad_norm': 0.30125197768211365, 'learning_rate': 0.0005989324890091632, 'epoch': 143.84}
+{'loss': 0.0637, 'grad_norm': 0.2761932611465454, 'learning_rate': 0.0005988206783456418, 'epoch': 150.68}
+{'loss': 0.0609, 'grad_norm': 0.2778259813785553, 'learning_rate': 0.000598703311619259, 'epoch': 157.53}
+{'loss': 0.0592, 'grad_norm': 0.25745171308517456, 'learning_rate': 0.0005985803910122495, 'epoch': 164.38}
+{'loss': 0.0561, 'grad_norm': 0.23556071519851685, 'learning_rate': 0.0005984521812934389, 'epoch': 171.23}
+{'loss': 0.0545, 'grad_norm': 0.24658477306365967, 'learning_rate': 0.0005983181709808585, 'epoch': 178.08}
+{'loss': 0.0521, 'grad_norm': 0.23914016783237457, 'learning_rate': 0.0005981786139486873, 'epoch': 184.93}
+{'loss': 0.0504, 'grad_norm': 0.23571883141994476, 'learning_rate': 0.0005980335127917514, 'epoch': 191.78}
+{'loss': 0.0487, 'grad_norm': 0.2217075675725937, 'learning_rate': 0.0005978831770216271, 'epoch': 198.63}
+{'loss': 0.0471, 'grad_norm': 0.21672840416431427, 'learning_rate': 0.0005977270068863113, 'epoch': 205.48}
+{'loss': 0.0455, 'grad_norm': 0.21345235407352448, 'learning_rate': 0.0005975653010230971, 'epoch': 212.33}
+{'loss': 0.0437, 'grad_norm': 0.20956815779209137, 'learning_rate': 0.0005973980624386296, 'epoch': 219.18}
+{'loss': 0.0432, 'grad_norm': 0.18709789216518402, 'learning_rate': 0.0005972252942424268, 'epoch': 226.03}
+{'loss': 0.0413, 'grad_norm': 0.1908738613128662, 'learning_rate': 0.0005970469996468196, 'epoch': 232.88}
+{'loss': 0.0401, 'grad_norm': 0.1991337686777115, 'learning_rate': 0.0005968635551120364, 'epoch': 239.73}
+{'loss': 0.0389, 'grad_norm': 0.19684672355651855, 'learning_rate': 0.0005966742288014218, 'epoch': 246.58}
+{'loss': 0.038, 'grad_norm': 0.1869305819272995, 'learning_rate': 0.0005964793863375285, 'epoch': 253.42}
+{'loss': 0.0372, 'grad_norm': 0.18502697348594666, 'learning_rate': 0.000596279031343121, 'epoch': 260.27}
+{'loss': 0.0362, 'grad_norm': 0.18014393746852875, 'learning_rate': 0.0005960731675434602, 'epoch': 267.12}
+{'loss': 0.035, 'grad_norm': 0.1827632486820221, 'learning_rate': 0.0005958622269951606, 'epoch': 273.97}
+{'loss': 0.0342, 'grad_norm': 0.1783399134874344, 'learning_rate': 0.0005956453681685164, 'epoch': 280.82}
+{'loss': 0.0337, 'grad_norm': 0.17633020877838135, 'learning_rate': 0.000595423012318509, 'epoch': 287.67}
+{'loss': 0.0325, 'grad_norm': 0.1581018567085266, 'learning_rate': 0.0005951951635794679, 'epoch': 294.52}
+{'loss': 0.0317, 'grad_norm': 0.16712738573551178, 'learning_rate': 0.000594961826187853, 'epoch': 301.37}
+{'loss': 0.0308, 'grad_norm': 0.16772498190402985, 'learning_rate': 0.0005947234875959991, 'epoch': 308.22}
+{'loss': 0.0304, 'grad_norm': 0.1526569128036499, 'learning_rate': 0.0005944791969719934, 'epoch': 315.07}
+{'loss': 0.0294, 'grad_norm': 0.16052450239658356, 'learning_rate': 0.0005942294310075968, 'epoch': 321.92}
+{'loss': 0.0292, 'grad_norm': 0.15980622172355652, 'learning_rate': 0.0005939741943467831, 'epoch': 328.77}
+{'loss': 0.0283, 'grad_norm': 0.1453501284122467, 'learning_rate': 0.0005937134917352444, 'epoch': 335.62}
+{'loss': 0.0281, 'grad_norm': 0.15195919573307037, 'learning_rate': 0.0005934473280203027, 'epoch': 342.47}
+{'loss': 0.0272, 'grad_norm': 0.14323335886001587, 'learning_rate': 0.0005931757081508204, 'epoch': 349.32}
+{'loss': 0.0265, 'grad_norm': 0.1325215846300125, 'learning_rate': 0.0005928986371771074, 'epoch': 356.16}
+{'loss': 0.0261, 'grad_norm': 0.1406984031200409, 'learning_rate': 0.0005926166907162662, 'epoch': 363.01}
+{'loss': 0.0256, 'grad_norm': 0.15585125982761383, 'learning_rate': 0.0005923287439664317, 'epoch': 369.86}
+{'loss': 0.0252, 'grad_norm': 0.14109055697917938, 'learning_rate': 0.0005920353618602267, 'epoch': 376.71}
+{'loss': 0.0247, 'grad_norm': 0.13930784165859222, 'learning_rate': 0.0005917365498525929, 'epoch': 383.56}
+{'loss': 0.0242, 'grad_norm': 0.13576407730579376, 'learning_rate': 0.0005914335412426773, 'epoch': 390.41}
+{'loss': 0.0238, 'grad_norm': 0.13093675673007965, 'learning_rate': 0.0005911239078641007, 'epoch': 397.26}
+{'loss': 0.0238, 'grad_norm': 0.12488485872745514, 'learning_rate': 0.0005908088615310341, 'epoch': 404.11}
+{'loss': 0.0229, 'grad_norm': 0.13971255719661713, 'learning_rate': 0.0005904884081012286, 'epoch': 410.96}
+{'loss': 0.0225, 'grad_norm': 0.11726325750350952, 'learning_rate': 0.0005901625535329716, 'epoch': 417.81}
+{'loss': 0.022, 'grad_norm': 0.14294452965259552, 'learning_rate': 0.0005898313038849751, 'epoch': 424.66}
+{'loss': 0.0219, 'grad_norm': 0.12420989573001862, 'learning_rate': 0.0005894946653162634, 'epoch': 431.51}
+{'loss': 0.0216, 'grad_norm': 0.13017427921295166, 'learning_rate': 0.0005891526440860591, 'epoch': 438.36}
+{'loss': 0.0209, 'grad_norm': 0.11971838027238846, 'learning_rate': 0.0005888059467100034, 'epoch': 445.21}
+{'loss': 0.0208, 'grad_norm': 0.12456561625003815, 'learning_rate': 0.0005884531900678611, 'epoch': 452.05}
+{'loss': 0.0207, 'grad_norm': 0.12119834870100021, 'learning_rate': 0.0005880950701286888, 'epoch': 458.9}
+{'loss': 0.0202, 'grad_norm': 0.1250610053539276, 'learning_rate': 0.0005877315935511188, 'epoch': 465.75}
+{'loss': 0.02, 'grad_norm': 0.11735550314188004, 'learning_rate': 0.0005873635100809344, 'epoch': 472.6}
+{'loss': 0.0196, 'grad_norm': 0.11143320798873901, 'learning_rate': 0.0005869893512798637, 'epoch': 479.45}
+{'loss': 0.0193, 'grad_norm': 0.10830515623092651, 'learning_rate': 0.0005866098563993585, 'epoch': 486.3}
+{'loss': 0.019, 'grad_norm': 0.11962047219276428, 'learning_rate': 0.0005862250324954814, 'epoch': 493.15}
+{'loss': 0.019, 'grad_norm': 0.12457296997308731, 'learning_rate': 0.0005858356723213428, 'epoch': 500.0}
+{'loss': 0.0185, 'grad_norm': 0.12317343801259995, 'learning_rate': 0.0005854402225570365, 'epoch': 506.85}
+{'loss': 0.0182, 'grad_norm': 0.11251538246870041, 'learning_rate': 0.0005850394655167125, 'epoch': 513.7}
+{'loss': 0.018, 'grad_norm': 0.10351619124412537, 'learning_rate': 0.0005846334086517674, 'epoch': 520.55}
+{'loss': 0.0182, 'grad_norm': 0.11355656385421753, 'learning_rate': 0.0005842228874870406, 'epoch': 527.4}
+{'loss': 0.0176, 'grad_norm': 0.11260335147380829, 'learning_rate': 0.0005838062642826209, 'epoch': 534.25}
+{'loss': 0.0173, 'grad_norm': 0.10033881664276123, 'learning_rate': 0.000583384364182862, 'epoch': 541.1}
+{'loss': 0.017, 'grad_norm': 0.1222195103764534, 'learning_rate': 0.0005829571950322792, 'epoch': 547.95}
+{'loss': 0.0168, 'grad_norm': 0.1129421517252922, 'learning_rate': 0.0005825247647733574, 'epoch': 554.79}
+{'loss': 0.0166, 'grad_norm': 0.11054748296737671, 'learning_rate': 0.0005820870814464028, 'epoch': 561.64}
+{'loss': 0.0166, 'grad_norm': 0.11467040330171585, 'learning_rate': 0.0005816441531893929, 'epoch': 568.49}
+{'loss': 0.0165, 'grad_norm': 0.11185439676046371, 'learning_rate': 0.0005811959882378265, 'epoch': 575.34}
+{'loss': 0.016, 'grad_norm': 0.11138030886650085, 'learning_rate': 0.0005807435069235138, 'epoch': 582.19}
+{'loss': 0.0159, 'grad_norm': 0.09412528574466705, 'learning_rate': 0.0005802849041100298, 'epoch': 589.04}
+{'loss': 0.0156, 'grad_norm': 0.11250908672809601, 'learning_rate': 0.0005798210898749166, 'epoch': 595.89}
+{'loss': 0.0155, 'grad_norm': 0.11286700516939163, 'learning_rate': 0.000579352072842012, 'epoch': 602.74}
+{'loss': 0.0153, 'grad_norm': 0.10176512598991394, 'learning_rate': 0.0005788788153319559, 'epoch': 609.59}
+{'loss': 0.0153, 'grad_norm': 0.10189257562160492, 'learning_rate': 0.000578399429323425, 'epoch': 616.44}
+{'loss': 0.015, 'grad_norm': 0.11181828379631042, 'learning_rate': 0.0005779148669504652, 'epoch': 623.29}
+{'loss': 0.0148, 'grad_norm': 0.10340604931116104, 'learning_rate': 0.0005774251372226911, 'epoch': 630.14}
+{'loss': 0.0147, 'grad_norm': 0.10455264896154404, 'learning_rate': 0.0005769312441635811, 'epoch': 636.99}
+{'loss': 0.0143, 'grad_norm': 0.09803429991006851, 'learning_rate': 0.0005764312174280118, 'epoch': 643.84}
+{'loss': 0.0143, 'grad_norm': 0.10295474529266357, 'learning_rate': 0.0005759260509235704, 'epoch': 650.68}
+{'loss': 0.0141, 'grad_norm': 0.11067035794258118, 'learning_rate': 0.0005754157540429699, 'epoch': 657.53}
+{'loss': 0.0141, 'grad_norm': 0.1064687967300415, 'learning_rate': 0.0005749013722141432, 'epoch': 664.38}
+{'loss': 0.0139, 'grad_norm': 0.10137049108743668, 'learning_rate': 0.0005743808533537314, 'epoch': 671.23}
+{'loss': 0.0138, 'grad_norm': 0.10385239124298096, 'learning_rate': 0.000573855232847484, 'epoch': 678.08}
+{'loss': 0.0138, 'grad_norm': 0.10495324432849884, 'learning_rate': 0.0005733245204684216, 'epoch': 684.93}
+{'loss': 0.0138, 'grad_norm': 0.09848809987306595, 'learning_rate': 0.000572788726084239, 'epoch': 691.78}
+{'loss': 0.0132, 'grad_norm': 0.09683550894260406, 'learning_rate': 0.0005722478596571228, 'epoch': 698.63}
+{'loss': 0.0131, 'grad_norm': 0.09278056025505066, 'learning_rate': 0.0005717019312435654, 'epoch': 705.48}
+{'loss': 0.0131, 'grad_norm': 0.09851943701505661, 'learning_rate': 0.000571150950994178, 'epoch': 712.33}
+{'loss': 0.013, 'grad_norm': 0.09119245409965515, 'learning_rate': 0.000570596046221836, 'epoch': 719.18}
+{'loss': 0.0127, 'grad_norm': 0.10285982489585876, 'learning_rate': 0.0005700361302806562, 'epoch': 726.03}
+{'loss': 0.0126, 'grad_norm': 0.09341919422149658, 'learning_rate': 0.000569470076428177, 'epoch': 732.88}
+{'loss': 0.0126, 'grad_norm': 0.08978927880525589, 'learning_rate': 0.0005688990122374168, 'epoch': 739.73}
+{'loss': 0.0127, 'grad_norm': 0.09696918725967407, 'learning_rate': 0.0005683229483263437, 'epoch': 746.58}
+{'loss': 0.0123, 'grad_norm': 0.1037103533744812, 'learning_rate': 0.0005677418954058876, 'epoch': 753.42}
+{'loss': 0.0121, 'grad_norm': 0.09181733429431915, 'learning_rate': 0.0005671558642797406, 'epoch': 760.27}
+{'loss': 0.0121, 'grad_norm': 0.0889756828546524, 'learning_rate': 0.0005665648658441558, 'epoch': 767.12}
+{'loss': 0.0119, 'grad_norm': 0.09606765955686569, 'learning_rate': 0.000565968911087745, 'epoch': 773.97}
+{'loss': 0.0121, 'grad_norm': 0.09339626133441925, 'learning_rate': 0.0005653692178192062, 'epoch': 780.82}
+{'loss': 0.0115, 'grad_norm': 0.08258794993162155, 'learning_rate': 0.0005647646101774776, 'epoch': 787.67}
+{'loss': 0.0118, 'grad_norm': 0.08135195076465607, 'learning_rate': 0.0005641538729794235, 'epoch': 794.52}
+{'loss': 0.0115, 'grad_norm': 0.09450732916593552, 'learning_rate': 0.00056353822428886, 'epoch': 801.37}
+{'loss': 0.0116, 'grad_norm': 0.08415962755680084, 'learning_rate': 0.0005629176755527284, 'epoch': 808.22}
+{'loss': 0.0113, 'grad_norm': 0.08495280891656876, 'learning_rate': 0.0005622922383090782, 'epoch': 815.07}
+{'loss': 0.0113, 'grad_norm': 0.0991756021976471, 'learning_rate': 0.0005616619241868527, 'epoch': 821.92}
+{'loss': 0.011, 'grad_norm': 0.09134546667337418, 'learning_rate': 0.0005610267449056719, 'epoch': 828.77}
+{'loss': 0.0111, 'grad_norm': 0.08416114747524261, 'learning_rate': 0.0005603879971766231, 'epoch': 835.62}
+{'loss': 0.0109, 'grad_norm': 0.08724985271692276, 'learning_rate': 0.0005597444273216218, 'epoch': 842.47}
+{'loss': 0.0109, 'grad_norm': 0.10171278566122055, 'learning_rate': 0.0005590947430786202, 'epoch': 849.32}
+{'loss': 0.0108, 'grad_norm': 0.0975988581776619, 'learning_rate': 0.000558440241409035, 'epoch': 856.16}
+{'loss': 0.0107, 'grad_norm': 0.08219818025827408, 'learning_rate': 0.0005577809344822128, 'epoch': 863.01}
+{'loss': 0.0105, 'grad_norm': 0.09149390459060669, 'learning_rate': 0.0005571168345568455, 'epoch': 869.86}
+{'loss': 0.0105, 'grad_norm': 0.08886010944843292, 'learning_rate': 0.0005564479539807433, 'epoch': 876.71}
+{'loss': 0.0105, 'grad_norm': 0.10468834638595581, 'learning_rate': 0.0005557743051906042, 'epoch': 883.56}
+{'loss': 0.0104, 'grad_norm': 0.07763952761888504, 'learning_rate': 0.000555095900711783, 'epoch': 890.41}
+{'loss': 0.0101, 'grad_norm': 0.09380723536014557, 'learning_rate': 0.0005544127531580583, 'epoch': 897.26}
+{'loss': 0.0102, 'grad_norm': 0.0866754874587059, 'learning_rate': 0.0005537248752313985, 'epoch': 904.11}
+{'loss': 0.0102, 'grad_norm': 0.08149043470621109, 'learning_rate': 0.000553032279721725, 'epoch': 910.96}
+{'loss': 0.01, 'grad_norm': 0.08785167336463928, 'learning_rate': 0.0005523363787937976, 'epoch': 917.81}
+{'loss': 0.0099, 'grad_norm': 0.07892214506864548, 'learning_rate': 0.0005516343962089666, 'epoch': 924.66}
+{'loss': 0.0099, 'grad_norm': 0.09940561652183533, 'learning_rate': 0.0005509277349100278, 'epoch': 931.51}
+{'loss': 0.0097, 'grad_norm': 0.09016420692205429, 'learning_rate': 0.0005502164080361477, 'epoch': 938.36}
+{'loss': 0.0097, 'grad_norm': 0.08512112498283386, 'learning_rate': 0.0005495004288132409, 'epoch': 945.21}
+{'loss': 0.0097, 'grad_norm': 0.07540781795978546, 'learning_rate': 0.0005487798105537248, 'epoch': 952.05}
+{'loss': 0.0096, 'grad_norm': 0.08596169203519821, 'learning_rate': 0.0005480545666562718, 'epoch': 958.9}
+{'loss': 0.0094, 'grad_norm': 0.08425033837556839, 'learning_rate': 0.0005473247106055599, 'epoch': 965.75}
+{'loss': 0.0094, 'grad_norm': 0.08031473308801651, 'learning_rate': 0.0005465917294616128, 'epoch': 972.6}
+{'loss': 0.0094, 'grad_norm': 0.0754956528544426, 'learning_rate': 0.0005458526990573546, 'epoch': 979.45}
+{'loss': 0.0095, 'grad_norm': 0.092156782746315, 'learning_rate': 0.0005451105891959554, 'epoch': 986.3}
+{'loss': 0.01, 'grad_norm': 0.07033981382846832, 'learning_rate': 0.0005443624392920829, 'epoch': 993.15}
+{'loss': 0.0089, 'grad_norm': 0.08496428281068802, 'learning_rate': 0.0005436112557957336, 'epoch': 1000.0}
+{'loss': 0.009, 'grad_norm': 0.08972132205963135, 'learning_rate': 0.0005428540419230664, 'epoch': 1006.85}
+{'loss': 0.009, 'grad_norm': 0.0943448469042778, 'learning_rate': 0.0005420923125920628, 'epoch': 1013.7}
+{'loss': 0.009, 'grad_norm': 0.08724427223205566, 'learning_rate': 0.0005413260819657858, 'epoch': 1020.55}
+{'loss': 0.009, 'grad_norm': 0.09628287702798843, 'learning_rate': 0.0005405553642909921, 'epoch': 1027.4}
+{'loss': 0.0089, 'grad_norm': 0.08354537934064865, 'learning_rate': 0.0005397801738978675, 'epoch': 1034.25}
+{'loss': 0.0087, 'grad_norm': 0.0813649520277977, 'learning_rate': 0.0005390005251997604, 'epoch': 1041.1}
+{'loss': 0.0087, 'grad_norm': 0.08317152410745621, 'learning_rate': 0.0005382164326929139, 'epoch': 1047.95}
+{'loss': 0.0087, 'grad_norm': 0.08495248109102249, 'learning_rate': 0.0005374279109561963, 'epoch': 1054.79}
+{'loss': 0.0087, 'grad_norm': 0.0796857550740242, 'learning_rate': 0.0005366365649193939, 'epoch': 1061.64}
+{'loss': 0.0086, 'grad_norm': 0.08009450137615204, 'learning_rate': 0.0005358392375735637, 'epoch': 1068.49}
+{'loss': 0.0084, 'grad_norm': 0.07897111028432846, 'learning_rate': 0.000535037525197767, 'epoch': 1075.34}
+{'loss': 0.0084, 'grad_norm': 0.08092501759529114, 'learning_rate': 0.0005342314426984835, 'epoch': 1082.19}
+{'loss': 0.0084, 'grad_norm': 0.07654944807291031, 'learning_rate': 0.0005334210050634477, 'epoch': 1089.04}
+{'loss': 0.0084, 'grad_norm': 0.08604492992162704, 'learning_rate': 0.0005326062273613706, 'epoch': 1095.89}
+{'loss': 0.0082, 'grad_norm': 0.0821460410952568, 'learning_rate': 0.0005317871247416594, 'epoch': 1102.74}
+{'loss': 0.0082, 'grad_norm': 0.07617975771427155, 'learning_rate': 0.000530963712434136, 'epoch': 1109.59}
+{'loss': 0.0082, 'grad_norm': 0.08461811393499374, 'learning_rate': 0.000530137665437697, 'epoch': 1116.44}
+{'loss': 0.0082, 'grad_norm': 0.06988617032766342, 'learning_rate': 0.0005293056883068185, 'epoch': 1123.29}
+{'loss': 0.0079, 'grad_norm': 0.07362373918294907, 'learning_rate': 0.0005284694476262226, 'epoch': 1130.14}
+{'loss': 0.008, 'grad_norm': 0.07868307828903198, 'learning_rate': 0.000527628958944384, 'epoch': 1136.99}
+{'loss': 0.008, 'grad_norm': 0.08699474483728409, 'learning_rate': 0.0005267842378887618, 'epoch': 1143.84}
+{'loss': 0.0078, 'grad_norm': 0.0703200027346611, 'learning_rate': 0.0005259370022387116, 'epoch': 1150.68}
+{'loss': 0.0079, 'grad_norm': 0.07830467075109482, 'learning_rate': 0.0005250838720183443, 'epoch': 1157.53}
+{'loss': 0.0078, 'grad_norm': 0.07683681696653366, 'learning_rate': 0.0005242265567457613, 'epoch': 1164.38}
+{'loss': 0.0078, 'grad_norm': 0.07998821884393692, 'learning_rate': 0.0005233650723612834, 'epoch': 1171.23}
+{'loss': 0.0077, 'grad_norm': 0.07870763540267944, 'learning_rate': 0.0005224994348827493, 'epoch': 1178.08}
+{'loss': 0.0078, 'grad_norm': 0.08745881170034409, 'learning_rate': 0.0005216296604052174, 'epoch': 1184.93}
+{'loss': 0.0075, 'grad_norm': 0.07910213619470596, 'learning_rate': 0.0005207575169930737, 'epoch': 1191.78}
+{'loss': 0.0076, 'grad_norm': 0.07083553075790405, 'learning_rate': 0.0005198812853719362, 'epoch': 1198.63}
+{'loss': 0.0076, 'grad_norm': 0.08112236857414246, 'learning_rate': 0.0005189992135558543, 'epoch': 1205.48}
+{'loss': 0.0073, 'grad_norm': 0.07902880758047104, 'learning_rate': 0.0005181130698214438, 'epoch': 1212.33}
+{'loss': 0.0075, 'grad_norm': 0.0816134586930275, 'learning_rate': 0.0005172228706450419, 'epoch': 1219.18}
+{'loss': 0.0074, 'grad_norm': 0.061839666217565536, 'learning_rate': 0.00051632863257839, 'epoch': 1226.03}
+{'loss': 0.0073, 'grad_norm': 0.08250574767589569, 'learning_rate': 0.0005154303722483258, 'epoch': 1232.88}
+{'loss': 0.0073, 'grad_norm': 0.08516381680965424, 'learning_rate': 0.0005145281063564741, 'epoch': 1239.73}
+{'loss': 0.0072, 'grad_norm': 0.07808634638786316, 'learning_rate': 0.0005136218516789365, 'epoch': 1246.58}
+{'loss': 0.0072, 'grad_norm': 0.07194897532463074, 'learning_rate': 0.0005127134494719596, 'epoch': 1253.42}
+{'loss': 0.0072, 'grad_norm': 0.0650600865483284, 'learning_rate': 0.0005118011080240951, 'epoch': 1260.27}
+{'loss': 0.0071, 'grad_norm': 0.0648416206240654, 'learning_rate': 0.000510883004104285, 'epoch': 1267.12}
+{'loss': 0.0071, 'grad_norm': 0.07676462829113007, 'learning_rate': 0.0005099609791732728, 'epoch': 1273.97}
+{'loss': 0.007, 'grad_norm': 0.09369511902332306, 'learning_rate': 0.0005090350503745457, 'epoch': 1280.82}
+{'loss': 0.007, 'grad_norm': 0.06928408145904541, 'learning_rate': 0.0005081052349241766, 'epoch': 1287.67}
+{'loss': 0.007, 'grad_norm': 0.07737064361572266, 'learning_rate': 0.0005071715501105042, 'epoch': 1294.52}
+{'loss': 0.0069, 'grad_norm': 0.07211680710315704, 'learning_rate': 0.0005062340132938115, 'epoch': 1301.37}
+{'loss': 0.0067, 'grad_norm': 0.0745561420917511, 'learning_rate': 0.0005052926419060028, 'epoch': 1308.22}
+{'loss': 0.0069, 'grad_norm': 0.08061383664608002, 'learning_rate': 0.0005043474534502798, 'epoch': 1315.07}
+{'loss': 0.0068, 'grad_norm': 0.07723027467727661, 'learning_rate': 0.0005034003672568936, 'epoch': 1321.92}
+{'loss': 0.0067, 'grad_norm': 0.06159736588597298, 'learning_rate': 0.0005024476050045495, 'epoch': 1328.77}
+{'loss': 0.0067, 'grad_norm': 0.07330399751663208, 'learning_rate': 0.0005014910785829191, 'epoch': 1335.62}
+{'loss': 0.0067, 'grad_norm': 0.06558390706777573, 'learning_rate': 0.0005005308057769859, 'epoch': 1342.47}
+{'loss': 0.0066, 'grad_norm': 0.072320856153965, 'learning_rate': 0.0004995687361532336, 'epoch': 1349.32}
+{'loss': 0.0068, 'grad_norm': 0.05978422984480858, 'learning_rate': 0.0004986010316152228, 'epoch': 1356.16}
+{'loss': 0.0065, 'grad_norm': 0.06927802413702011, 'learning_rate': 0.000497629634428423, 'epoch': 1363.01}
+{'loss': 0.0066, 'grad_norm': 0.06120694801211357, 'learning_rate': 0.0004966545626543145, 'epoch': 1369.86}
+{'loss': 0.0064, 'grad_norm': 0.08020837604999542, 'learning_rate': 0.0004956758344227007, 'epoch': 1376.71}
+{'loss': 0.0064, 'grad_norm': 0.07453333586454391, 'learning_rate': 0.000494695436283207, 'epoch': 1383.56}
+{'loss': 0.0065, 'grad_norm': 0.07765387743711472, 'learning_rate': 0.0004937094570193107, 'epoch': 1390.41}
+{'loss': 0.0064, 'grad_norm': 0.060188792645931244, 'learning_rate': 0.000492719876057145, 'epoch': 1397.26}
+{'loss': 0.0066, 'grad_norm': 0.06308852881193161, 'learning_rate': 0.0004917287016886777, 'epoch': 1404.11}
+{'loss': 0.0063, 'grad_norm': 0.07513266801834106, 'learning_rate': 0.0004907319797065206, 'epoch': 1410.96}
+{'loss': 0.0062, 'grad_norm': 0.07055766135454178, 'learning_rate': 0.0004897317113872263, 'epoch': 1417.81}
+{'loss': 0.0063, 'grad_norm': 0.07086393237113953, 'learning_rate': 0.0004887279153290852, 'epoch': 1424.66}
+{'loss': 0.0062, 'grad_norm': 0.07323571294546127, 'learning_rate': 0.00048772061019597933, 'epoch': 1431.51}
+{'loss': 0.0062, 'grad_norm': 0.06672395020723343, 'learning_rate': 0.0004867098147170366, 'epoch': 1438.36}
+{'loss': 0.0061, 'grad_norm': 0.08638143539428711, 'learning_rate': 0.00048569554768628165, 'epoch': 1445.21}
+{'loss': 0.0061, 'grad_norm': 0.06635167449712753, 'learning_rate': 0.0004846778279622868, 'epoch': 1452.05}
+{'loss': 0.0062, 'grad_norm': 0.06683152168989182, 'learning_rate': 0.0004836587201891042, 'epoch': 1458.9}
+{'loss': 0.0061, 'grad_norm': 0.07765605300664902, 'learning_rate': 0.0004826341587213596, 'epoch': 1465.75}
+{'loss': 0.006, 'grad_norm': 0.07358122617006302, 'learning_rate': 0.00048160620148170213, 'epoch': 1472.6}
+{'loss': 0.006, 'grad_norm': 0.05647129565477371, 'learning_rate': 0.0004805748675832503, 'epoch': 1479.45}
+{'loss': 0.006, 'grad_norm': 0.06883317232131958, 'learning_rate': 0.00047954017620190575, 'epoch': 1486.3}
+{'loss': 0.0059, 'grad_norm': 0.07124164700508118, 'learning_rate': 0.00047850214657599717, 'epoch': 1493.15}
+{'loss': 0.0059, 'grad_norm': 0.0650600716471672, 'learning_rate': 0.0004774607980059218, 'epoch': 1500.0}
+{'loss': 0.0059, 'grad_norm': 0.07032209634780884, 'learning_rate': 0.0004764161498537873, 'epoch': 1506.85}
+{'loss': 0.0057, 'grad_norm': 0.061512723565101624, 'learning_rate': 0.0004753703206603305, 'epoch': 1513.7}
+{'loss': 0.0059, 'grad_norm': 0.06603369861841202, 'learning_rate': 0.0004743191381773022, 'epoch': 1520.55}
+{'loss': 0.0058, 'grad_norm': 0.06730959564447403, 'learning_rate': 0.000473264714526042, 'epoch': 1527.4}
+{'loss': 0.0057, 'grad_norm': 0.06897374242544174, 'learning_rate': 0.00047220706931176644, 'epoch': 1534.25}
+{'loss': 0.0057, 'grad_norm': 0.0692349225282669, 'learning_rate': 0.00047114834707620947, 'epoch': 1541.1}
+{'loss': 0.0059, 'grad_norm': 0.06205511838197708, 'learning_rate': 0.00047008432413540673, 'epoch': 1547.95}
+{'loss': 0.0056, 'grad_norm': 0.06175753101706505, 'learning_rate': 0.000469017138765545, 'epoch': 1554.79}
+{'loss': 0.0056, 'grad_norm': 0.0747830793261528, 'learning_rate': 0.0004679468108091232, 'epoch': 1561.64}
+{'loss': 0.0056, 'grad_norm': 0.055987052619457245, 'learning_rate': 0.0004668755101715391, 'epoch': 1568.49}
+{'loss': 0.0055, 'grad_norm': 0.0661383643746376, 'learning_rate': 0.0004657989629883439, 'epoch': 1575.34}
+{'loss': 0.0055, 'grad_norm': 0.06084407493472099, 'learning_rate': 0.0004647193330551, 'epoch': 1582.19}
+{'loss': 0.0057, 'grad_norm': 0.06632468849420547, 'learning_rate': 0.0004636388088740905, 'epoch': 1589.04}
+{'loss': 0.0056, 'grad_norm': 0.06300230324268341, 'learning_rate': 0.00046255307978431017, 'epoch': 1595.89}
+{'loss': 0.0055, 'grad_norm': 0.07845179736614227, 'learning_rate': 0.00046146432829616496, 'epoch': 1602.74}
+{'loss': 0.0054, 'grad_norm': 0.0727214440703392, 'learning_rate': 0.0004603725746531392, 'epoch': 1609.59}
+{'loss': 0.0054, 'grad_norm': 0.06652957201004028, 'learning_rate': 0.00045927783915453716, 'epoch': 1616.44}
+{'loss': 0.0054, 'grad_norm': 0.06363809108734131, 'learning_rate': 0.0004581801421551057, 'epoch': 1623.29}
+{'loss': 0.0054, 'grad_norm': 0.0750216394662857, 'learning_rate': 0.00045707950406465557, 'epoch': 1630.14}
+{'loss': 0.0053, 'grad_norm': 0.06336367875337601, 'learning_rate': 0.00045597594534768236, 'epoch': 1636.99}
+{'loss': 0.0053, 'grad_norm': 0.06712542474269867, 'learning_rate': 0.00045486948652298547, 'epoch': 1643.84}
+{'loss': 0.0053, 'grad_norm': 0.05161179602146149, 'learning_rate': 0.0004537623697000817, 'epoch': 1650.68}
+{'loss': 0.0052, 'grad_norm': 0.04767623543739319, 'learning_rate': 0.0004526501781288413, 'epoch': 1657.53}
+{'loss': 0.0052, 'grad_norm': 0.05917124077677727, 'learning_rate': 0.0004515351482868686, 'epoch': 1664.38}
+{'loss': 0.0052, 'grad_norm': 0.06310248374938965, 'learning_rate': 0.00045041730090624956, 'epoch': 1671.23}
+{'loss': 0.0052, 'grad_norm': 0.06718277931213379, 'learning_rate': 0.00044929890083704644, 'epoch': 1678.08}
+{'loss': 0.0051, 'grad_norm': 0.06266529858112335, 'learning_rate': 0.00044817773590113583, 'epoch': 1684.93}
+{'loss': 0.0052, 'grad_norm': 0.057771824300289154, 'learning_rate': 0.0004470515717974727, 'epoch': 1691.78}
+{'loss': 0.005, 'grad_norm': 0.055439937859773636, 'learning_rate': 0.0004459226735196509, 'epoch': 1698.63}
+{'loss': 0.0051, 'grad_norm': 0.06770532578229904, 'learning_rate': 0.00044479106205761614, 'epoch': 1705.48}
+{'loss': 0.005, 'grad_norm': 0.06427377462387085, 'learning_rate': 0.0004436567584517611, 'epoch': 1712.33}
+{'loss': 0.005, 'grad_norm': 0.06994155794382095, 'learning_rate': 0.00044251978379253434, 'epoch': 1719.18}
+{'loss': 0.005, 'grad_norm': 0.050548065453767776, 'learning_rate': 0.00044138015922004807, 'epoch': 1726.03}
+{'loss': 0.0049, 'grad_norm': 0.06091396138072014, 'learning_rate': 0.0004402379059236851, 'epoch': 1732.88}
+{'loss': 0.0049, 'grad_norm': 0.06989418715238571, 'learning_rate': 0.0004390953374513991, 'epoch': 1739.73}
+{'loss': 0.005, 'grad_norm': 0.07213591784238815, 'learning_rate': 0.0004379478956216649, 'epoch': 1746.58}
+{'loss': 0.0049, 'grad_norm': 0.055393800139427185, 'learning_rate': 0.0004367978888851646, 'epoch': 1753.42}
+{'loss': 0.0048, 'grad_norm': 0.0596817247569561, 'learning_rate': 0.0004356453386243201, 'epoch': 1760.27}
+{'loss': 0.0048, 'grad_norm': 0.06458137929439545, 'learning_rate': 0.00043449257891633964, 'epoch': 1767.12}
+{'loss': 0.0049, 'grad_norm': 0.05407700315117836, 'learning_rate': 0.0004333373285399633, 'epoch': 1773.97}
+{'loss': 0.0048, 'grad_norm': 0.0658470019698143, 'learning_rate': 0.00043217728634499156, 'epoch': 1780.82}
+{'loss': 0.0048, 'grad_norm': 0.05449594184756279, 'learning_rate': 0.0004310147865379299, 'epoch': 1787.67}
+{'loss': 0.0047, 'grad_norm': 0.06631015986204147, 'learning_rate': 0.00042984985073348756, 'epoch': 1794.52}
+{'loss': 0.0047, 'grad_norm': 0.0724615603685379, 'learning_rate': 0.00042868250059166653, 'epoch': 1801.37}
+{'loss': 0.0049, 'grad_norm': 0.059903472661972046, 'learning_rate': 0.0004275127578173595, 'epoch': 1808.22}
+{'loss': 0.0047, 'grad_norm': 0.06290926784276962, 'learning_rate': 0.0004263406441599464, 'epoch': 1815.07}
+{'loss': 0.0046, 'grad_norm': 0.06317903846502304, 'learning_rate': 0.0004251661814128893, 'epoch': 1821.92}
+{'loss': 0.0047, 'grad_norm': 0.058137111365795135, 'learning_rate': 0.00042398939141332763, 'epoch': 1828.77}
+{'loss': 0.0046, 'grad_norm': 0.06741625815629959, 'learning_rate': 0.0004228126565186124, 'epoch': 1835.62}
+{'loss': 0.0046, 'grad_norm': 0.06597934663295746, 'learning_rate': 0.00042163364725601276, 'epoch': 1842.47}
+{'loss': 0.0046, 'grad_norm': 0.05295424908399582, 'learning_rate': 0.00042045001595457376, 'epoch': 1849.32}
+{'loss': 0.0045, 'grad_norm': 0.058925870805978775, 'learning_rate': 0.00041926414508971507, 'epoch': 1856.16}
+{'loss': 0.0045, 'grad_norm': 0.07380951195955276, 'learning_rate': 0.0004180760567106906, 'epoch': 1863.01}
+{'loss': 0.0046, 'grad_norm': 0.05936808884143829, 'learning_rate': 0.0004168857729079854, 'epoch': 1869.86}
+{'loss': 0.0046, 'grad_norm': 0.05540727078914642, 'learning_rate': 0.0004156933158129047, 'epoch': 1876.71}
+{'loss': 0.0045, 'grad_norm': 0.05672520771622658, 'learning_rate': 0.0004144987075971623, 'epoch': 1883.56}
+{'loss': 0.0044, 'grad_norm': 0.05869629979133606, 'learning_rate': 0.00041330436605658606, 'epoch': 1890.41}
+{'loss': 0.0045, 'grad_norm': 0.05155261978507042, 'learning_rate': 0.00041210552646531726, 'epoch': 1897.26}
+{'loss': 0.0044, 'grad_norm': 0.05309251695871353, 'learning_rate': 0.0004109046024622346, 'epoch': 1904.11}
+{'loss': 0.0045, 'grad_norm': 0.06647993624210358, 'learning_rate': 0.0004097016163764798, 'epoch': 1910.96}
+{'loss': 0.0044, 'grad_norm': 0.0612226240336895, 'learning_rate': 0.00040849659057553525, 'epoch': 1917.81}
+{'loss': 0.0043, 'grad_norm': 0.05231211334466934, 'learning_rate': 0.00040729196354939446, 'epoch': 1924.66}
+{'loss': 0.0043, 'grad_norm': 0.0738133043050766, 'learning_rate': 0.000406082929539113, 'epoch': 1931.51}
+{'loss': 0.0043, 'grad_norm': 0.050047773867845535, 'learning_rate': 0.000404871923096976, 'epoch': 1938.36}
+{'loss': 0.0043, 'grad_norm': 0.059671759605407715, 'learning_rate': 0.00040365896673959093, 'epoch': 1945.21}
+{'loss': 0.0043, 'grad_norm': 0.05824016407132149, 'learning_rate': 0.00040244408301982063, 'epoch': 1952.05}
+{'loss': 0.0043, 'grad_norm': 0.05423980951309204, 'learning_rate': 0.000401227294526364, 'epoch': 1958.9}
+{'loss': 0.0042, 'grad_norm': 0.0481659397482872, 'learning_rate': 0.000400008623883336, 'epoch': 1965.75}
+{'loss': 0.0042, 'grad_norm': 0.056755393743515015, 'learning_rate': 0.00039878809374984677, 'epoch': 1972.6}
+{'loss': 0.0043, 'grad_norm': 0.06433846801519394, 'learning_rate': 0.00039756572681958055, 'epoch': 1979.45}
+{'loss': 0.0042, 'grad_norm': 0.05382215604186058, 'learning_rate': 0.00039634399597769003, 'epoch': 1986.3}
+{'loss': 0.0042, 'grad_norm': 0.05354997515678406, 'learning_rate': 0.0003951204809411038, 'epoch': 1993.15}
+{'loss': 0.0042, 'grad_norm': 0.05333179980516434, 'learning_rate': 0.00039389274715061955, 'epoch': 2000.0}
+{'loss': 0.0041, 'grad_norm': 0.059910159558057785, 'learning_rate': 0.000392663267584012, 'epoch': 2006.85}
+{'loss': 0.0041, 'grad_norm': 0.05505237728357315, 'learning_rate': 0.00039143206510136504, 'epoch': 2013.7}
+{'loss': 0.0042, 'grad_norm': 0.0662623941898346, 'learning_rate': 0.00039019916259479704, 'epoch': 2020.55}
+{'loss': 0.004, 'grad_norm': 0.050755824893713, 'learning_rate': 0.0003889645829880358, 'epoch': 2027.4}
+{'loss': 0.0041, 'grad_norm': 0.0539734810590744, 'learning_rate': 0.00038772834923599163, 'epoch': 2034.25}
+{'loss': 0.004, 'grad_norm': 0.0512419119477272, 'learning_rate': 0.0003864904843243308, 'epoch': 2041.1}
+{'loss': 0.0041, 'grad_norm': 0.0532972626388073, 'learning_rate': 0.0003852534918047736, 'epoch': 2047.95}
+{'loss': 0.004, 'grad_norm': 0.06792213022708893, 'learning_rate': 0.0003840124367989419, 'epoch': 2054.79}
+{'loss': 0.004, 'grad_norm': 0.054178763180971146, 'learning_rate': 0.00038276981972457254, 'epoch': 2061.64}
+{'loss': 0.004, 'grad_norm': 0.05832705274224281, 'learning_rate': 0.00038152566368601914, 'epoch': 2068.49}
+{'loss': 0.0039, 'grad_norm': 0.03932520002126694, 'learning_rate': 0.0003802799918162496, 'epoch': 2075.34}
+{'loss': 0.0039, 'grad_norm': 0.05108828470110893, 'learning_rate': 0.00037903282727641617, 'epoch': 2082.19}
+{'loss': 0.0039, 'grad_norm': 0.050368256866931915, 'learning_rate': 0.00037778419325542467, 'epoch': 2089.04}
+{'loss': 0.0039, 'grad_norm': 0.05459252744913101, 'learning_rate': 0.00037653661455800313, 'epoch': 2095.89}
+{'loss': 0.0039, 'grad_norm': 0.051165953278541565, 'learning_rate': 0.00037528511407310073, 'epoch': 2102.74}
+{'loss': 0.0038, 'grad_norm': 0.05249667540192604, 'learning_rate': 0.0003740322137894005, 'epoch': 2109.59}
+{'loss': 0.0039, 'grad_norm': 0.06887463480234146, 'learning_rate': 0.0003727779370024546, 'epoch': 2116.44}
+{'loss': 0.0039, 'grad_norm': 0.04814625158905983, 'learning_rate': 0.0003715223070334093, 'epoch': 2123.29}
+{'loss': 0.0038, 'grad_norm': 0.054084647446870804, 'learning_rate': 0.0003702653472285705, 'epoch': 2130.14}
+{'loss': 0.0039, 'grad_norm': 0.05847820267081261, 'learning_rate': 0.00036900708095897035, 'epoch': 2136.99}
+{'loss': 0.0038, 'grad_norm': 0.06446531414985657, 'learning_rate': 0.00036775005198355203, 'epoch': 2143.84}
+{'loss': 0.0037, 'grad_norm': 0.05274278670549393, 'learning_rate': 0.00036648924549016965, 'epoch': 2150.68}
+{'loss': 0.0038, 'grad_norm': 0.05485115572810173, 'learning_rate': 0.0003652272027422226, 'epoch': 2157.53}
+{'loss': 0.0037, 'grad_norm': 0.05908171460032463, 'learning_rate': 0.0003639639472052521, 'epoch': 2164.38}
+{'loss': 0.0037, 'grad_norm': 0.055830154567956924, 'learning_rate': 0.00036269950236734864, 'epoch': 2171.23}
+{'loss': 0.0037, 'grad_norm': 0.03773028776049614, 'learning_rate': 0.0003614338917387159, 'epoch': 2178.08}
+{'loss': 0.0037, 'grad_norm': 0.04872659221291542, 'learning_rate': 0.0003601696734813311, 'epoch': 2184.93}
+{'loss': 0.0037, 'grad_norm': 0.05012151226401329, 'learning_rate': 0.00035890180410200835, 'epoch': 2191.78}
+{'loss': 0.0037, 'grad_norm': 0.053628455847501755, 'learning_rate': 0.00035763283954370374, 'epoch': 2198.63}
+{'loss': 0.0037, 'grad_norm': 0.04633082449436188, 'learning_rate': 0.0003563628034006575, 'epoch': 2205.48}
+{'loss': 0.0036, 'grad_norm': 0.05758330971002579, 'learning_rate': 0.0003550917192870341, 'epoch': 2212.33}
+{'loss': 0.0036, 'grad_norm': 0.04307921975851059, 'learning_rate': 0.0003538196108364834, 'epoch': 2219.18}
+{'loss': 0.0036, 'grad_norm': 0.057216543704271317, 'learning_rate': 0.00035254650170170066, 'epoch': 2226.03}
+{'loss': 0.0036, 'grad_norm': 0.05069169029593468, 'learning_rate': 0.00035127496468559936, 'epoch': 2232.88}
+{'loss': 0.0035, 'grad_norm': 0.05469191446900368, 'learning_rate': 0.0003499999270974163, 'epoch': 2239.73}
+{'loss': 0.0035, 'grad_norm': 0.0483061708509922, 'learning_rate': 0.0003487239598455314, 'epoch': 2246.58}
+{'loss': 0.0036, 'grad_norm': 0.04413144662976265, 'learning_rate': 0.00034744708665438806, 'epoch': 2253.42}
+{'loss': 0.0035, 'grad_norm': 0.05324054881930351, 'learning_rate': 0.00034616933126527396, 'epoch': 2260.27}
+{'loss': 0.0035, 'grad_norm': 0.04876648262143135, 'learning_rate': 0.0003448907174358798, 'epoch': 2267.12}
+{'loss': 0.0035, 'grad_norm': 0.053638748824596405, 'learning_rate': 0.0003436138286540377, 'epoch': 2273.97}
+{'loss': 0.0035, 'grad_norm': 0.04354758560657501, 'learning_rate': 0.00034233613218759675, 'epoch': 2280.82}
+{'loss': 0.0034, 'grad_norm': 0.04597245901823044, 'learning_rate': 0.00034105508884176434, 'epoch': 2287.67}
+{'loss': 0.0034, 'grad_norm': 0.05020902305841446, 'learning_rate': 0.0003397732821463015, 'epoch': 2294.52}
+{'loss': 0.0035, 'grad_norm': 0.05363401398062706, 'learning_rate': 0.00033849073593422604, 'epoch': 2301.37}
+{'loss': 0.0034, 'grad_norm': 0.0409567691385746, 'learning_rate': 0.000337207474052306, 'epoch': 2308.22}
+{'loss': 0.0034, 'grad_norm': 0.04248104616999626, 'learning_rate': 0.00033592352036061594, 'epoch': 2315.07}
+{'loss': 0.0034, 'grad_norm': 0.05536489933729172, 'learning_rate': 0.0003346388987320936, 'epoch': 2321.92}
+{'loss': 0.0034, 'grad_norm': 0.04818642884492874, 'learning_rate': 0.00033335363305209565, 'epoch': 2328.77}
+{'loss': 0.0034, 'grad_norm': 0.05624924600124359, 'learning_rate': 0.00033207031959264663, 'epoch': 2335.62}
+{'loss': 0.0033, 'grad_norm': 0.03919575735926628, 'learning_rate': 0.00033078383868184594, 'epoch': 2342.47}
+{'loss': 0.0033, 'grad_norm': 0.04513135179877281, 'learning_rate': 0.00032949678539786223, 'epoch': 2349.32}
+{'loss': 0.0033, 'grad_norm': 0.05768068879842758, 'learning_rate': 0.00032820918367126465, 'epoch': 2356.16}
+{'loss': 0.0033, 'grad_norm': 0.055812567472457886, 'learning_rate': 0.00032692105744282007, 'epoch': 2363.01}
+{'loss': 0.0037, 'grad_norm': 0.048868149518966675, 'learning_rate': 0.00032563758613551245, 'epoch': 2369.86}
+{'loss': 0.0034, 'grad_norm': 0.043707165867090225, 'learning_rate': 0.0003243484846228633, 'epoch': 2376.71}
+{'loss': 0.0032, 'grad_norm': 0.03591664507985115, 'learning_rate': 0.00032305893039150704, 'epoch': 2383.56}
+{'loss': 0.0032, 'grad_norm': 0.048245299607515335, 'learning_rate': 0.00032176894741851387, 'epoch': 2390.41}
+{'loss': 0.0032, 'grad_norm': 0.05117164924740791, 'learning_rate': 0.0003204785596889257, 'epoch': 2397.26}
+{'loss': 0.0033, 'grad_norm': 0.04808361083269119, 'learning_rate': 0.0003191903730963493, 'epoch': 2404.11}
+{'loss': 0.0032, 'grad_norm': 0.048653896898031235, 'learning_rate': 0.0003178992485279263, 'epoch': 2410.96}
+{'loss': 0.0032, 'grad_norm': 0.04754798486828804, 'learning_rate': 0.0003166077911533851, 'epoch': 2417.81}
+{'loss': 0.0032, 'grad_norm': 0.05085008218884468, 'learning_rate': 0.0003153160249851816, 'epoch': 2424.66}
+{'loss': 0.0032, 'grad_norm': 0.046315427869558334, 'learning_rate': 0.0003140239740415132, 'epoch': 2431.51}
+{'loss': 0.0031, 'grad_norm': 0.03196975216269493, 'learning_rate': 0.00031273166234587233, 'epoch': 2438.36}
+{'loss': 0.0032, 'grad_norm': 0.033161383122205734, 'learning_rate': 0.0003114391139265992, 'epoch': 2445.21}
+{'loss': 0.0032, 'grad_norm': 0.04375629872083664, 'learning_rate': 0.00031014893853494594, 'epoch': 2452.05}
+{'loss': 0.0031, 'grad_norm': 0.03786173462867737, 'learning_rate': 0.0003088559891239066, 'epoch': 2458.9}
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Tue Jun 18 11:14:01 2024
+Driver Version                            : 535.161.08
+CUDA Version                              : 12.2
+
+Attached GPUs                             : 2
+GPU 00000000:01:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 3480764
+            GPU Utilization               : 95 %
+            Memory Utilization            : 66 %
+            Max memory usage              : 49098 MiB
+            Time                          : 0 ms
+            Is Running                    : 1
+
+GPU 00000000:81:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 3480765
+            GPU Utilization               : 95 %
+            Memory Utilization            : 66 %
+            Max memory usage              : 49098 MiB
+            Time                          : 0 ms
+            Is Running                    : 1
+
+Tue Jun 18 11:14:01 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.161.08             Driver Version: 535.161.08   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  | 00000000:01:00.0 Off |                    0 |
+| N/A   62C    P0             358W / 500W |  42820MiB / 81920MiB |    100%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          On  | 00000000:81:00.0 Off |                    0 |
+| N/A   57C    P0             344W / 500W |  42820MiB / 81920MiB |     99%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A   3480764      C   ...an.li/.conda/envs/new/bin/python3.9    42812MiB |
+|    1   N/A  N/A   3480765      C   ...an.li/.conda/envs/new/bin/python3.9    42812MiB |
++---------------------------------------------------------------------------------------+
+06/18/2024 11:17:15 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: True
+06/18/2024 11:17:15 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=5000.0,
+eval_strategy=no,
+evaluation_strategy=None,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0006,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_5000/runs/Jun18_11-17-15_cn-g027.server.mila.quebec,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=cosine,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=5000.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_5000,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=16,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=/network/scratch/z/zixuan.li/gpt2_ckpts_5000,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=5000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=715,
+weight_decay=0.0,
+)
+06/18/2024 11:17:15 - INFO - __main__ - Checkpoint detected, resuming training at /network/scratch/z/zixuan.li/gpt2_ckpts_5000/checkpoint-175000. To avoid this behavior, change the `--output_dir` or add `--overwrite_output_dir` to train from scratch.
+06/18/2024 11:17:15 - WARNING - __main__ - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, 16-bits training: True
+06/18/2024 11:17:17 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+06/18/2024 11:17:17 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/18/2024 11:17:17 - INFO - datasets.builder - Found cached dataset wikitext (/home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3)
+06/18/2024 11:17:17 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/18/2024 11:17:17 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/18/2024 11:17:17 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/18/2024 11:17:19 - INFO - __main__ - Training new model from scratch - Total size=118.68M params
+06/18/2024 11:17:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-24f5302b824080b8.arrow
+06/18/2024 11:17:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-38a62f26547cea30.arrow
+06/18/2024 11:17:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-c75285d115ff6176.arrow
+06/18/2024 11:17:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-11021e805cc2f0aa.arrow
+06/18/2024 11:17:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-05e2d75c0aaf4f13.arrow
+06/18/2024 11:17:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-e8014a8ce34ae12b.arrow
+{'loss': 0.0033, 'grad_norm': 0.0473402664065361, 'learning_rate': 0.0003191877911953101, 'epoch': 2404.11}
+{'loss': 0.0032, 'grad_norm': 0.04402366280555725, 'learning_rate': 0.0003178966659373146, 'epoch': 2410.96}
+{'loss': 0.0032, 'grad_norm': 0.04183370992541313, 'learning_rate': 0.0003166052079212197, 'epoch': 2417.81}
+{'loss': 0.0032, 'grad_norm': 0.05190292373299599, 'learning_rate': 0.00031531344115949333, 'epoch': 2424.66}
+{'loss': 0.0032, 'grad_norm': 0.05382770672440529, 'learning_rate': 0.00031402138967034384, 'epoch': 2431.51}
+{'loss': 0.0031, 'grad_norm': 0.0459454171359539, 'learning_rate': 0.00031272907747727376, 'epoch': 2438.36}
+{'loss': 0.0031, 'grad_norm': 0.045997124165296555, 'learning_rate': 0.00031143652860863273, 'epoch': 2445.21}
+{'loss': 0.0031, 'grad_norm': 0.04366114363074303, 'learning_rate': 0.00031014376709717135, 'epoch': 2452.05}
+{'loss': 0.0031, 'grad_norm': 0.05264553055167198, 'learning_rate': 0.00030885081697959346, 'epoch': 2458.9}
+{'loss': 0.0031, 'grad_norm': 0.054247669875621796, 'learning_rate': 0.00030755770229610996, 'epoch': 2465.75}
+{'loss': 0.0031, 'grad_norm': 0.040149688720703125, 'learning_rate': 0.0003062644470899919, 'epoch': 2472.6}
+{'loss': 0.0031, 'grad_norm': 0.04507894068956375, 'learning_rate': 0.0003049710754071225, 'epoch': 2479.45}
+{'loss': 0.0031, 'grad_norm': 0.048914834856987, 'learning_rate': 0.000303677611295551, 'epoch': 2486.3}
+{'loss': 0.0031, 'grad_norm': 0.03128873556852341, 'learning_rate': 0.0003023840788050452, 'epoch': 2493.15}
+{'loss': 0.0031, 'grad_norm': 0.053617946803569794, 'learning_rate': 0.00030109050198664415, 'epoch': 2500.0}
+{'loss': 0.0031, 'grad_norm': 0.03718183934688568, 'learning_rate': 0.0002997969048922114, 'epoch': 2506.85}
+{'loss': 0.003, 'grad_norm': 0.04375877603888512, 'learning_rate': 0.00029850331157398714, 'epoch': 2513.7}
+{'loss': 0.003, 'grad_norm': 0.05068075656890869, 'learning_rate': 0.0002972097460841413, 'epoch': 2520.55}
+{'loss': 0.003, 'grad_norm': 0.0417313277721405, 'learning_rate': 0.00029591623247432697, 'epoch': 2527.4}
+{'loss': 0.003, 'grad_norm': 0.049541763961315155, 'learning_rate': 0.0002946227947952321, 'epoch': 2534.25}
+{'loss': 0.003, 'grad_norm': 0.044961679726839066, 'learning_rate': 0.00029332945709613286, 'epoch': 2541.1}
+{'loss': 0.003, 'grad_norm': 0.04056575894355774, 'learning_rate': 0.0002920388297120282, 'epoch': 2547.95}
+{'loss': 0.0029, 'grad_norm': 0.057651370763778687, 'learning_rate': 0.0002907457637927259, 'epoch': 2554.79}
+{'loss': 0.003, 'grad_norm': 0.04818952828645706, 'learning_rate': 0.0002894528699402244, 'epoch': 2561.64}
+{'loss': 0.0029, 'grad_norm': 0.041456181555986404, 'learning_rate': 0.00028816017219368827, 'epoch': 2568.49}
+{'loss': 0.003, 'grad_norm': 0.04878037050366402, 'learning_rate': 0.000286867694588636, 'epoch': 2575.34}
+{'loss': 0.0029, 'grad_norm': 0.05962134152650833, 'learning_rate': 0.00028557546115649314, 'epoch': 2582.19}
+{'loss': 0.0029, 'grad_norm': 0.04765374958515167, 'learning_rate': 0.0002842834959241449, 'epoch': 2589.04}
+{'loss': 0.0029, 'grad_norm': 0.03387127071619034, 'learning_rate': 0.0002829918229134899, 'epoch': 2595.89}
+{'loss': 0.0029, 'grad_norm': 0.048203155398368835, 'learning_rate': 0.0002817004661409934, 'epoch': 2602.74}
+{'loss': 0.0029, 'grad_norm': 0.04337316006422043, 'learning_rate': 0.00028040944961724076, 'epoch': 2609.59}
+{'loss': 0.0029, 'grad_norm': 0.04017515107989311, 'learning_rate': 0.0002791187973464911, 'epoch': 2616.44}
+{'loss': 0.0028, 'grad_norm': 0.038686368614435196, 'learning_rate': 0.00027782853332623066, 'epoch': 2623.29}
+{'loss': 0.0028, 'grad_norm': 0.03656444698572159, 'learning_rate': 0.00027654126082292787, 'epoch': 2630.14}
+{'loss': 0.0028, 'grad_norm': 0.03663300350308418, 'learning_rate': 0.0002752518443704075, 'epoch': 2636.99}
+{'loss': 0.0028, 'grad_norm': 0.035813700407743454, 'learning_rate': 0.00027396288806779757, 'epoch': 2643.84}
+{'loss': 0.0028, 'grad_norm': 0.043021999299526215, 'learning_rate': 0.0002726744158810508, 'epoch': 2650.68}
+{'loss': 0.003, 'grad_norm': 0.042447175830602646, 'learning_rate': 0.000271389027172371, 'epoch': 2657.53}
+{'loss': 0.0028, 'grad_norm': 0.042398110032081604, 'learning_rate': 0.00027010159399082416, 'epoch': 2664.38}
+{'loss': 0.0028, 'grad_norm': 0.04005419462919235, 'learning_rate': 0.00026881471671934417, 'epoch': 2671.23}
+{'loss': 0.0028, 'grad_norm': 0.033572349697351456, 'learning_rate': 0.0002675284192852275, 'epoch': 2678.08}
+{'loss': 0.0027, 'grad_norm': 0.0393446683883667, 'learning_rate': 0.00026624272560498975, 'epoch': 2684.93}
+{'loss': 0.0027, 'grad_norm': 0.03339057043194771, 'learning_rate': 0.0002649576595839208, 'epoch': 2691.78}
+{'loss': 0.0027, 'grad_norm': 0.0582621805369854, 'learning_rate': 0.0002636732451156402, 'epoch': 2698.63}
+{'loss': 0.0027, 'grad_norm': 0.038069386035203934, 'learning_rate': 0.0002623895060816528, 'epoch': 2705.48}
+{'loss': 0.0027, 'grad_norm': 0.033637575805187225, 'learning_rate': 0.0002611090317166034, 'epoch': 2712.33}
+{'loss': 0.0027, 'grad_norm': 0.025634966790676117, 'learning_rate': 0.0002598267136749218, 'epoch': 2719.18}
+{'loss': 0.0027, 'grad_norm': 0.03845374286174774, 'learning_rate': 0.000258545142587251, 'epoch': 2726.03}
+{'loss': 0.0027, 'grad_norm': 0.04421938955783844, 'learning_rate': 0.00025726434228222795, 'epoch': 2732.88}
+{'loss': 0.0027, 'grad_norm': 0.04281005635857582, 'learning_rate': 0.0002559843365741585, 'epoch': 2739.73}
+{'loss': 0.0027, 'grad_norm': 0.03224963694810867, 'learning_rate': 0.00025470514926257456, 'epoch': 2746.58}
+{'loss': 0.0027, 'grad_norm': 0.03932283818721771, 'learning_rate': 0.0002534268041317907, 'epoch': 2753.42}
+{'loss': 0.0027, 'grad_norm': 0.04162615165114403, 'learning_rate': 0.0002521518790288178, 'epoch': 2760.27}
+{'loss': 0.0026, 'grad_norm': 0.03998744487762451, 'learning_rate': 0.0002508752877464032, 'epoch': 2767.12}
+{'loss': 0.0026, 'grad_norm': 0.0424942821264267, 'learning_rate': 0.0002495996098545574, 'epoch': 2773.97}
+{'loss': 0.0026, 'grad_norm': 0.04041192680597305, 'learning_rate': 0.00024832486907234346, 'epoch': 2780.82}
+{'loss': 0.0026, 'grad_norm': 0.02899392880499363, 'learning_rate': 0.00024705108910140077, 'epoch': 2787.67}
+{'loss': 0.0026, 'grad_norm': 0.04068842902779579, 'learning_rate': 0.0002457782936255037, 'epoch': 2794.52}
+{'loss': 0.0026, 'grad_norm': 0.04479692131280899, 'learning_rate': 0.00024450650631012194, 'epoch': 2801.37}
+{'loss': 0.0026, 'grad_norm': 0.038664016872644424, 'learning_rate': 0.00024323829126754516, 'epoch': 2808.22}
+{'loss': 0.0026, 'grad_norm': 0.038152121007442474, 'learning_rate': 0.00024196858905974633, 'epoch': 2815.07}
+{'loss': 0.0025, 'grad_norm': 0.02702699601650238, 'learning_rate': 0.00024069996584744692, 'epoch': 2821.92}
+{'loss': 0.0026, 'grad_norm': 0.025431452319025993, 'learning_rate': 0.00023943244521854067, 'epoch': 2828.77}
+{'loss': 0.0025, 'grad_norm': 0.039789728820323944, 'learning_rate': 0.00023816858238982395, 'epoch': 2835.62}
+{'loss': 0.0025, 'grad_norm': 0.043017350137233734, 'learning_rate': 0.0002369033352860634, 'epoch': 2842.47}
+{'loss': 0.0025, 'grad_norm': 0.03438769280910492, 'learning_rate': 0.00023563926135759144, 'epoch': 2849.32}
+{'loss': 0.0025, 'grad_norm': 0.030235767364501953, 'learning_rate': 0.00023437638410771502, 'epoch': 2856.16}
+{'loss': 0.0025, 'grad_norm': 0.029782062396407127, 'learning_rate': 0.00023311472701749135, 'epoch': 2863.01}
+{'loss': 0.0025, 'grad_norm': 0.06887423247098923, 'learning_rate': 0.0002318568331155235, 'epoch': 2869.86}
+{'loss': 0.0025, 'grad_norm': 0.031167320907115936, 'learning_rate': 0.0002305976841391135, 'epoch': 2876.71}
+{'loss': 0.0025, 'grad_norm': 0.035313233733177185, 'learning_rate': 0.00022933982558086258, 'epoch': 2883.56}
+{'loss': 0.0025, 'grad_norm': 0.03682826831936836, 'learning_rate': 0.0002280832808285138, 'epoch': 2890.41}
+{'loss': 0.0025, 'grad_norm': 0.04169663041830063, 'learning_rate': 0.00022683058231053686, 'epoch': 2897.26}
+{'loss': 0.0025, 'grad_norm': 0.025902539491653442, 'learning_rate': 0.00022557673249078448, 'epoch': 2904.11}
+{'loss': 0.0025, 'grad_norm': 0.03250997141003609, 'learning_rate': 0.00022432426644525722, 'epoch': 2910.96}
+{'loss': 0.0024, 'grad_norm': 0.042676690965890884, 'learning_rate': 0.00022307320746143351, 'epoch': 2917.81}
+{'loss': 0.0025, 'grad_norm': 0.02901477739214897, 'learning_rate': 0.00022182357880062964, 'epoch': 2924.66}
+{'loss': 0.0024, 'grad_norm': 0.03631335124373436, 'learning_rate': 0.00022057540369756787, 'epoch': 2931.51}
+{'loss': 0.0024, 'grad_norm': 0.030764950439333916, 'learning_rate': 0.00021932870535994366, 'epoch': 2938.36}
+{'loss': 0.0024, 'grad_norm': 0.04045490548014641, 'learning_rate': 0.00021808350696799462, 'epoch': 2945.21}
+{'loss': 0.0024, 'grad_norm': 0.025924477726221085, 'learning_rate': 0.0002168423174892308, 'epoch': 2952.05}
+{'loss': 0.0024, 'grad_norm': 0.02306475304067135, 'learning_rate': 0.00021560018530185595, 'epoch': 2958.9}
+{'loss': 0.0024, 'grad_norm': 0.032819751650094986, 'learning_rate': 0.0002143596223856525, 'epoch': 2965.75}
+{'loss': 0.0024, 'grad_norm': 0.039638735353946686, 'learning_rate': 0.00021312312814346878, 'epoch': 2972.6}
+{'loss': 0.0024, 'grad_norm': 0.03182025998830795, 'learning_rate': 0.00021188576968476285, 'epoch': 2979.45}
+{'loss': 0.0024, 'grad_norm': 0.04564923793077469, 'learning_rate': 0.0002106525193503907, 'epoch': 2986.3}
+{'loss': 0.0024, 'grad_norm': 0.030728930607438087, 'learning_rate': 0.00020941845719110947, 'epoch': 2993.15}
+{'loss': 0.0023, 'grad_norm': 0.03730225935578346, 'learning_rate': 0.00020818607924173212, 'epoch': 3000.0}
+{'loss': 0.0023, 'grad_norm': 0.030277667567133904, 'learning_rate': 0.00020695540841623303, 'epoch': 3006.85}
+{'loss': 0.0023, 'grad_norm': 0.029927968978881836, 'learning_rate': 0.0002057264675968454, 'epoch': 3013.7}
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Tue Jun 18 17:02:02 2024
+Driver Version                            : 535.161.08
+CUDA Version                              : 12.2
+
+Attached GPUs                             : 2
+GPU 00000000:01:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 3666062
+            GPU Utilization               : 94 %
+            Memory Utilization            : 66 %
+            Max memory usage              : 49982 MiB
+            Time                          : 0 ms
+            Is Running                    : 1
+
+GPU 00000000:C1:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 3666063
+            GPU Utilization               : 94 %
+            Memory Utilization            : 66 %
+            Max memory usage              : 49974 MiB
+            Time                          : 0 ms
+            Is Running                    : 1
+
+Tue Jun 18 17:02:02 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.161.08             Driver Version: 535.161.08   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  | 00000000:01:00.0 Off |                    0 |
+| N/A   53C    P0             354W / 500W |  49894MiB / 81920MiB |    100%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          On  | 00000000:C1:00.0 Off |                    0 |
+| N/A   49C    P0             348W / 500W |  49874MiB / 81920MiB |    100%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A   3666062      C   ...an.li/.conda/envs/new/bin/python3.9    49886MiB |
+|    1   N/A  N/A   3666063      C   ...an.li/.conda/envs/new/bin/python3.9    49866MiB |
++---------------------------------------------------------------------------------------+
+06/18/2024 17:06:03 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: True
+06/18/2024 17:06:03 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=5000.0,
+eval_strategy=no,
+evaluation_strategy=None,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0006,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_5000/runs/Jun18_17-06-03_cn-g027.server.mila.quebec,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=cosine,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=5000.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_5000,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=16,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=/network/scratch/z/zixuan.li/gpt2_ckpts_5000,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=5000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=715,
+weight_decay=0.0,
+)
+06/18/2024 17:06:03 - INFO - __main__ - Checkpoint detected, resuming training at /network/scratch/z/zixuan.li/gpt2_ckpts_5000/checkpoint-220000. To avoid this behavior, change the `--output_dir` or add `--overwrite_output_dir` to train from scratch.
+06/18/2024 17:06:03 - WARNING - __main__ - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, 16-bits training: True
+06/18/2024 17:06:04 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+06/18/2024 17:06:04 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/18/2024 17:06:04 - INFO - datasets.builder - Found cached dataset wikitext (/home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3)
+06/18/2024 17:06:04 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/18/2024 17:06:04 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/18/2024 17:06:04 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/18/2024 17:06:06 - INFO - __main__ - Training new model from scratch - Total size=118.68M params
+06/18/2024 17:06:06 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-24f5302b824080b8.arrow
+06/18/2024 17:06:06 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-38a62f26547cea30.arrow
+06/18/2024 17:06:06 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-c75285d115ff6176.arrow
+06/18/2024 17:06:08 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-11021e805cc2f0aa.arrow
+06/18/2024 17:06:08 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-05e2d75c0aaf4f13.arrow
+06/18/2024 17:06:08 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-e8014a8ce34ae12b.arrow
+{'loss': 0.0023, 'grad_norm': 0.02695288136601448, 'learning_rate': 0.00020449927963363585, 'epoch': 3020.55}
+{'loss': 0.0023, 'grad_norm': 0.040523022413253784, 'learning_rate': 0.00020327386734407982, 'epoch': 3027.4}
+{'loss': 0.0023, 'grad_norm': 0.025555966421961784, 'learning_rate': 0.00020205025351263718, 'epoch': 3034.25}
+{'loss': 0.0023, 'grad_norm': 0.02871863543987274, 'learning_rate': 0.00020082846089032824, 'epoch': 3041.1}
+{'loss': 0.0023, 'grad_norm': 0.03075442649424076, 'learning_rate': 0.00019960851219431126, 'epoch': 3047.95}
+{'loss': 0.0023, 'grad_norm': 0.040932055562734604, 'learning_rate': 0.00019839043010745955, 'epoch': 3054.79}
+{'loss': 0.0023, 'grad_norm': 0.029425321146845818, 'learning_rate': 0.00019717423727794037, 'epoch': 3061.64}
+{'loss': 0.0023, 'grad_norm': 0.03287997096776962, 'learning_rate': 0.0001959599563187932, 'epoch': 3068.49}
+{'loss': 0.0023, 'grad_norm': 0.028048645704984665, 'learning_rate': 0.00019474760980750958, 'epoch': 3075.34}
+{'loss': 0.0022, 'grad_norm': 0.038937751203775406, 'learning_rate': 0.00019353722028561332, 'epoch': 3082.19}
+{'loss': 0.0023, 'grad_norm': 0.03397637605667114, 'learning_rate': 0.0001923288102582411, 'epoch': 3089.04}
+{'loss': 0.0022, 'grad_norm': 0.028462570160627365, 'learning_rate': 0.00019112240219372473, 'epoch': 3095.89}
+{'loss': 0.0023, 'grad_norm': 0.017246302217245102, 'learning_rate': 0.00018991801852317263, 'epoch': 3102.74}
+{'loss': 0.0022, 'grad_norm': 0.0324748270213604, 'learning_rate': 0.00018871568164005302, 'epoch': 3109.59}
+{'loss': 0.0023, 'grad_norm': 0.03129127249121666, 'learning_rate': 0.0001875154138997776, 'epoch': 3116.44}
+{'loss': 0.0022, 'grad_norm': 0.02718798816204071, 'learning_rate': 0.00018631723761928587, 'epoch': 3123.29}
+{'loss': 0.0023, 'grad_norm': 0.03809937834739685, 'learning_rate': 0.00018512356507741746, 'epoch': 3130.14}
+{'loss': 0.0022, 'grad_norm': 0.02009313553571701, 'learning_rate': 0.0001839296342172282, 'epoch': 3136.99}
+{'loss': 0.0022, 'grad_norm': 0.022331438958644867, 'learning_rate': 0.00018273786148830412, 'epoch': 3143.84}
+{'loss': 0.0022, 'grad_norm': 0.025760263204574585, 'learning_rate': 0.00018154826904963459, 'epoch': 3150.68}
+{'loss': 0.0022, 'grad_norm': 0.022406306117773056, 'learning_rate': 0.00018036087901967008, 'epoch': 3157.53}
+{'loss': 0.0022, 'grad_norm': 0.031988244503736496, 'learning_rate': 0.00017917571347591095, 'epoch': 3164.38}
+{'loss': 0.0022, 'grad_norm': 0.03875682130455971, 'learning_rate': 0.0001779927944544971, 'epoch': 3171.23}
+{'loss': 0.0022, 'grad_norm': 0.021756527945399284, 'learning_rate': 0.00017681214394979795, 'epoch': 3178.08}
+{'loss': 0.0022, 'grad_norm': 0.04673965275287628, 'learning_rate': 0.00017563378391400415, 'epoch': 3184.93}
+{'loss': 0.0022, 'grad_norm': 0.017834480851888657, 'learning_rate': 0.00017445773625671858, 'epoch': 3191.78}
+{'loss': 0.0021, 'grad_norm': 0.023245681077241898, 'learning_rate': 0.0001732840228445495, 'epoch': 3198.63}
+{'loss': 0.0021, 'grad_norm': 0.03911708667874336, 'learning_rate': 0.00017211266550070384, 'epoch': 3205.48}
+{'loss': 0.0021, 'grad_norm': 0.03671541437506676, 'learning_rate': 0.0001709436860045814, 'epoch': 3212.33}
+{'loss': 0.0021, 'grad_norm': 0.020674096420407295, 'learning_rate': 0.00016977710609137006, 'epoch': 3219.18}
+{'loss': 0.0021, 'grad_norm': 0.015135245397686958, 'learning_rate': 0.00016861294745164156, 'epoch': 3226.03}
+{'loss': 0.0021, 'grad_norm': 0.03150322288274765, 'learning_rate': 0.00016745123173094785, 'epoch': 3232.88}
+{'loss': 0.0021, 'grad_norm': 0.01744757406413555, 'learning_rate': 0.00016629198052941913, 'epoch': 3239.73}
+{'loss': 0.0021, 'grad_norm': 0.032773345708847046, 'learning_rate': 0.00016513521540136247, 'epoch': 3246.58}
+{'loss': 0.0021, 'grad_norm': 0.02106638438999653, 'learning_rate': 0.00016398095785485987, 'epoch': 3253.42}
+{'loss': 0.0021, 'grad_norm': 0.020327681675553322, 'learning_rate': 0.0001628292293513697, 'epoch': 3260.27}
+{'loss': 0.0021, 'grad_norm': 0.028897544369101524, 'learning_rate': 0.00016168234710185238, 'epoch': 3267.12}
+{'loss': 0.0021, 'grad_norm': 0.030777545645833015, 'learning_rate': 0.00016053802635728536, 'epoch': 3273.97}
+{'loss': 0.0021, 'grad_norm': 0.029882127419114113, 'learning_rate': 0.00015939400286438013, 'epoch': 3280.82}
+{'loss': 0.0021, 'grad_norm': 0.03557909280061722, 'learning_rate': 0.00015825259370112255, 'epoch': 3287.67}
+{'loss': 0.0021, 'grad_norm': 0.025318285450339317, 'learning_rate': 0.00015711382009007727, 'epoch': 3294.52}
+{'loss': 0.0021, 'grad_norm': 0.03257196769118309, 'learning_rate': 0.00015597997277311428, 'epoch': 3301.37}
+{'loss': 0.0021, 'grad_norm': 0.027399200946092606, 'learning_rate': 0.0001548465283610293, 'epoch': 3308.22}
+{'loss': 0.0021, 'grad_norm': 0.031098052859306335, 'learning_rate': 0.0001537157828311551, 'epoch': 3315.07}
+{'loss': 0.002, 'grad_norm': 0.0316447839140892, 'learning_rate': 0.0001525877572077838, 'epoch': 3321.92}
+{'loss': 0.0021, 'grad_norm': 0.03255593031644821, 'learning_rate': 0.00015146472028480822, 'epoch': 3328.77}
+{'loss': 0.002, 'grad_norm': 0.03128090500831604, 'learning_rate': 0.00015034219180018829, 'epoch': 3335.62}
+{'loss': 0.0021, 'grad_norm': 0.03245748206973076, 'learning_rate': 0.00014922244594826526, 'epoch': 3342.47}
+{'loss': 0.0021, 'grad_norm': 0.021968062967061996, 'learning_rate': 0.00014810550354881096, 'epoch': 3349.32}
+{'loss': 0.0021, 'grad_norm': 0.031081421300768852, 'learning_rate': 0.00014699138536947192, 'epoch': 3356.16}
+{'loss': 0.002, 'grad_norm': 0.03201567381620407, 'learning_rate': 0.0001458823318188831, 'epoch': 3363.01}
+{'loss': 0.002, 'grad_norm': 0.026743968948721886, 'learning_rate': 0.00014477391842050136, 'epoch': 3369.86}
+{'loss': 0.002, 'grad_norm': 0.02582288533449173, 'learning_rate': 0.00014366839118740038, 'epoch': 3376.71}
+{'loss': 0.002, 'grad_norm': 0.020286057144403458, 'learning_rate': 0.00014256577067498101, 'epoch': 3383.56}
+{'loss': 0.002, 'grad_norm': 0.025345640257000923, 'learning_rate': 0.00014146607738459814, 'epoch': 3390.41}
+{'loss': 0.002, 'grad_norm': 0.01948823593556881, 'learning_rate': 0.00014037152229908674, 'epoch': 3397.26}
+{'loss': 0.002, 'grad_norm': 0.022533493116497993, 'learning_rate': 0.00013927773878231922, 'epoch': 3404.11}
+{'loss': 0.002, 'grad_norm': 0.03293346241116524, 'learning_rate': 0.00013818694362295557, 'epoch': 3410.96}
+{'loss': 0.002, 'grad_norm': 0.022221406921744347, 'learning_rate': 0.00013709915710247874, 'epoch': 3417.81}
+{'loss': 0.002, 'grad_norm': 0.0208332147449255, 'learning_rate': 0.00013601656592552121, 'epoch': 3424.66}
+{'loss': 0.002, 'grad_norm': 0.009568481706082821, 'learning_rate': 0.0001349348511849698, 'epoch': 3431.51}
+{'loss': 0.002, 'grad_norm': 0.02908499725162983, 'learning_rate': 0.0001338562055504393, 'epoch': 3438.36}
+{'loss': 0.002, 'grad_norm': 0.03083835542201996, 'learning_rate': 0.0001327806490775127, 'epoch': 3445.21}
+{'loss': 0.002, 'grad_norm': 0.021736998111009598, 'learning_rate': 0.00013170820176433546, 'epoch': 3452.05}
+{'loss': 0.002, 'grad_norm': 0.02541135624051094, 'learning_rate': 0.00013063888355124357, 'epoch': 3458.9}
+{'loss': 0.002, 'grad_norm': 0.026049340143799782, 'learning_rate': 0.00012957271432039222, 'epoch': 3465.75}
+{'loss': 0.002, 'grad_norm': 0.03295503929257393, 'learning_rate': 0.00012850971389538732, 'epoch': 3472.6}
+{'loss': 0.002, 'grad_norm': 0.024936581030488014, 'learning_rate': 0.00012744990204091594, 'epoch': 3479.45}
+{'loss': 0.002, 'grad_norm': 0.023847468197345734, 'learning_rate': 0.00012639540845460866, 'epoch': 3486.3}
+{'loss': 0.0019, 'grad_norm': 0.018873391672968864, 'learning_rate': 0.00012534202632234428, 'epoch': 3493.15}
+{'loss': 0.0019, 'grad_norm': 0.00951453298330307, 'learning_rate': 0.00012429189165838236, 'epoch': 3500.0}
+{'loss': 0.0019, 'grad_norm': 0.0174407958984375, 'learning_rate': 0.00012324502398819296, 'epoch': 3506.85}
+{'loss': 0.0019, 'grad_norm': 0.013097390532493591, 'learning_rate': 0.00012220144277650175, 'epoch': 3513.7}
+{'loss': 0.0019, 'grad_norm': 0.02007017470896244, 'learning_rate': 0.00012116324466551088, 'epoch': 3520.55}
+{'loss': 0.0019, 'grad_norm': 0.019875045865774155, 'learning_rate': 0.00012012628785053752, 'epoch': 3527.4}
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Tue Jun 18 21:57:01 2024
+Driver Version                            : 535.161.08
+CUDA Version                              : 12.2
+
+Attached GPUs                             : 2
+GPU 00000000:01:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 3849690
+            GPU Utilization               : 94 %
+            Memory Utilization            : 66 %
+            Max memory usage              : 49974 MiB
+            Time                          : 0 ms
+            Is Running                    : 1
+
+GPU 00000000:C1:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 3849691
+            GPU Utilization               : 94 %
+            Memory Utilization            : 66 %
+            Max memory usage              : 49978 MiB
+            Time                          : 0 ms
+            Is Running                    : 1
+
+Tue Jun 18 21:57:01 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.161.08             Driver Version: 535.161.08   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  | 00000000:01:00.0 Off |                    0 |
+| N/A   55C    P0             336W / 500W |  43600MiB / 81920MiB |     87%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          On  | 00000000:C1:00.0 Off |                    0 |
+| N/A   50C    P0             263W / 500W |  43592MiB / 81920MiB |     92%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A   3849690      C   ...an.li/.conda/envs/new/bin/python3.9    43592MiB |
+|    1   N/A  N/A   3849691      C   ...an.li/.conda/envs/new/bin/python3.9    43584MiB |
++---------------------------------------------------------------------------------------+
+06/18/2024 22:01:16 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: True
+06/18/2024 22:01:16 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=5000.0,
+eval_strategy=no,
+evaluation_strategy=None,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0006,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_5000/runs/Jun18_22-01-15_cn-g017.server.mila.quebec,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=cosine,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=5000.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_5000,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=16,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=/network/scratch/z/zixuan.li/gpt2_ckpts_5000,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=5000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=715,
+weight_decay=0.0,
+)
+06/18/2024 22:01:16 - INFO - __main__ - Checkpoint detected, resuming training at /network/scratch/z/zixuan.li/gpt2_ckpts_5000/checkpoint-255000. To avoid this behavior, change the `--output_dir` or add `--overwrite_output_dir` to train from scratch.
+06/18/2024 22:01:16 - WARNING - __main__ - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, 16-bits training: True
+06/18/2024 22:01:17 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+06/18/2024 22:01:17 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/18/2024 22:01:17 - INFO - datasets.builder - Found cached dataset wikitext (/home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3)
+06/18/2024 22:01:17 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/18/2024 22:01:17 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/18/2024 22:01:17 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/18/2024 22:01:19 - INFO - __main__ - Training new model from scratch - Total size=118.68M params
+06/18/2024 22:01:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-24f5302b824080b8.arrow
+06/18/2024 22:01:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-38a62f26547cea30.arrow
+06/18/2024 22:01:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-c75285d115ff6176.arrow
+06/18/2024 22:01:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-11021e805cc2f0aa.arrow
+06/18/2024 22:01:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-05e2d75c0aaf4f13.arrow
+06/18/2024 22:01:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-e8014a8ce34ae12b.arrow
+{'loss': 0.0019, 'grad_norm': 0.00945805199444294, 'learning_rate': 0.00012429189165838236, 'epoch': 3500.0}
+{'loss': 0.0019, 'grad_norm': 0.017018551006913185, 'learning_rate': 0.00012324502398819296, 'epoch': 3506.85}
+{'loss': 0.0019, 'grad_norm': 0.0131753571331501, 'learning_rate': 0.00012220144277650175, 'epoch': 3513.7}
+{'loss': 0.0019, 'grad_norm': 0.02046685665845871, 'learning_rate': 0.00012116116742692856, 'epoch': 3520.55}
+{'loss': 0.0019, 'grad_norm': 0.020200466737151146, 'learning_rate': 0.0001201242172816262, 'epoch': 3527.4}
+{'loss': 0.0019, 'grad_norm': 0.015079612843692303, 'learning_rate': 0.00011909061162092104, 'epoch': 3534.25}
+{'loss': 0.0019, 'grad_norm': 0.022496912628412247, 'learning_rate': 0.00011806036966295439, 'epoch': 3541.1}
+{'loss': 0.0019, 'grad_norm': 0.028251932933926582, 'learning_rate': 0.00011703351056332533, 'epoch': 3547.95}
+{'loss': 0.0019, 'grad_norm': 0.0227139163762331, 'learning_rate': 0.000116010053414734, 'epoch': 3554.79}
+{'loss': 0.0019, 'grad_norm': 0.008289562538266182, 'learning_rate': 0.0001149900172466277, 'epoch': 3561.64}
+{'loss': 0.0019, 'grad_norm': 0.011430580168962479, 'learning_rate': 0.00011397342102484613, 'epoch': 3568.49}
+{'loss': 0.0019, 'grad_norm': 0.009782945737242699, 'learning_rate': 0.00011296028365126871, 'epoch': 3575.34}
+{'loss': 0.0019, 'grad_norm': 0.016572218388319016, 'learning_rate': 0.00011195062396346387, 'epoch': 3582.19}
+{'loss': 0.0019, 'grad_norm': 0.029589645564556122, 'learning_rate': 0.00011094446073433827, 'epoch': 3589.04}
+{'loss': 0.0019, 'grad_norm': 0.02559087425470352, 'learning_rate': 0.00010994181267178777, 'epoch': 3595.89}
+{'loss': 0.0019, 'grad_norm': 0.019590817391872406, 'learning_rate': 0.00010894269841834978, 'epoch': 3602.74}
+{'loss': 0.0019, 'grad_norm': 0.02160152979195118, 'learning_rate': 0.00010794713655085659, 'epoch': 3609.59}
+{'loss': 0.0019, 'grad_norm': 0.026469556614756584, 'learning_rate': 0.00010695514558008952, 'epoch': 3616.44}
+{'loss': 0.0019, 'grad_norm': 0.018499702215194702, 'learning_rate': 0.00010596674395043567, 'epoch': 3623.29}
+{'loss': 0.0019, 'grad_norm': 0.03408980369567871, 'learning_rate': 0.0001049819500395443, 'epoch': 3630.14}
+{'loss': 0.0019, 'grad_norm': 0.008466752246022224, 'learning_rate': 0.00010400078215798484, 'epoch': 3636.99}
+{'loss': 0.0019, 'grad_norm': 0.025022516027092934, 'learning_rate': 0.0001030232585489074, 'epoch': 3643.84}
+{'loss': 0.0019, 'grad_norm': 0.02188684046268463, 'learning_rate': 0.00010205134144285541, 'epoch': 3650.68}
+{'loss': 0.0019, 'grad_norm': 0.012833862565457821, 'learning_rate': 0.00010108115345768156, 'epoch': 3657.53}
+{'loss': 0.0018, 'grad_norm': 0.01379169337451458, 'learning_rate': 0.00010011466403052521, 'epoch': 3664.38}
+{'loss': 0.0018, 'grad_norm': 0.01794276013970375, 'learning_rate': 9.915189113161537e-05, 'epoch': 3671.23}
+{'loss': 0.0018, 'grad_norm': 0.020952299237251282, 'learning_rate': 9.819285266207879e-05, 'epoch': 3678.08}
+{'loss': 0.0018, 'grad_norm': 0.02081402949988842, 'learning_rate': 9.723756645360627e-05, 'epoch': 3684.93}
+{'loss': 0.0018, 'grad_norm': 0.005880307871848345, 'learning_rate': 9.628605026812201e-05, 'epoch': 3691.78}
+{'loss': 0.0018, 'grad_norm': 0.024490443989634514, 'learning_rate': 9.533832179745302e-05, 'epoch': 3698.63}
+{'loss': 0.0018, 'grad_norm': 0.028101112693548203, 'learning_rate': 9.439439866300016e-05, 'epoch': 3705.48}
+{'loss': 0.0018, 'grad_norm': 0.02419768087565899, 'learning_rate': 9.345429841541054e-05, 'epoch': 3712.33}
+{'loss': 0.0018, 'grad_norm': 0.015243192203342915, 'learning_rate': 9.251803853425113e-05, 'epoch': 3719.18}
+{'loss': 0.0018, 'grad_norm': 0.02523563802242279, 'learning_rate': 9.158563642768399e-05, 'epoch': 3726.03}
+{'loss': 0.0018, 'grad_norm': 0.0177963525056839, 'learning_rate': 9.0657109432142e-05, 'epoch': 3732.88}
+{'loss': 0.0018, 'grad_norm': 0.016910091042518616, 'learning_rate': 8.973247481200746e-05, 'epoch': 3739.73}
+{'loss': 0.0018, 'grad_norm': 0.024770615622401237, 'learning_rate': 8.881174975929033e-05, 'epoch': 3746.58}
+{'loss': 0.0018, 'grad_norm': 0.028309397399425507, 'learning_rate': 8.789495139330863e-05, 'epoch': 3753.42}
+{'loss': 0.0018, 'grad_norm': 0.006526514887809753, 'learning_rate': 8.698391852249712e-05, 'epoch': 3760.27}
+{'loss': 0.0018, 'grad_norm': 0.012722109444439411, 'learning_rate': 8.60750166572816e-05, 'epoch': 3767.12}
+{'loss': 0.0018, 'grad_norm': 0.031742218881845474, 'learning_rate': 8.517189823147908e-05, 'epoch': 3773.97}
+{'loss': 0.0018, 'grad_norm': 0.018875373527407646, 'learning_rate': 8.427096032953293e-05, 'epoch': 3780.82}
+{'loss': 0.0018, 'grad_norm': 0.026348186656832695, 'learning_rate': 8.337403354258758e-05, 'epoch': 3787.67}
+{'loss': 0.0018, 'grad_norm': 0.00947975367307663, 'learning_rate': 8.248113454747297e-05, 'epoch': 3794.52}
+{'loss': 0.0018, 'grad_norm': 0.02336772345006466, 'learning_rate': 8.159227994612886e-05, 'epoch': 3801.37}
+{'loss': 0.0018, 'grad_norm': 0.017052751034498215, 'learning_rate': 8.070925178891234e-05, 'epoch': 3808.22}
+{'loss': 0.0018, 'grad_norm': 0.01867155358195305, 'learning_rate': 7.982852730871581e-05, 'epoch': 3815.07}
+{'loss': 0.0018, 'grad_norm': 0.008887163363397121, 'learning_rate': 7.895189654301516e-05, 'epoch': 3821.92}
+{'loss': 0.0018, 'grad_norm': 0.005790687166154385, 'learning_rate': 7.808111672018388e-05, 'epoch': 3828.77}
+{'loss': 0.0018, 'grad_norm': 0.012814827263355255, 'learning_rate': 7.721271393682183e-05, 'epoch': 3835.62}
+{'loss': 0.0018, 'grad_norm': 0.009881781414151192, 'learning_rate': 7.63484535045613e-05, 'epoch': 3842.47}
+{'loss': 0.0018, 'grad_norm': 0.0168754979968071, 'learning_rate': 7.548835149285695e-05, 'epoch': 3849.32}
+{'loss': 0.0018, 'grad_norm': 0.011960877105593681, 'learning_rate': 7.463242389384427e-05, 'epoch': 3856.16}
+{'loss': 0.0018, 'grad_norm': 0.012885106727480888, 'learning_rate': 7.378068662204285e-05, 'epoch': 3863.01}
+{'loss': 0.0018, 'grad_norm': 0.011834582313895226, 'learning_rate': 7.29348463680379e-05, 'epoch': 3869.86}
+{'loss': 0.0018, 'grad_norm': 0.007156198378652334, 'learning_rate': 7.209152872275653e-05, 'epoch': 3876.71}
+{'loss': 0.0018, 'grad_norm': 0.007402833551168442, 'learning_rate': 7.125244864831548e-05, 'epoch': 3883.56}
+{'loss': 0.0018, 'grad_norm': 0.01079568825662136, 'learning_rate': 7.041762174598351e-05, 'epoch': 3890.41}
+{'loss': 0.0017, 'grad_norm': 0.023711558431386948, 'learning_rate': 6.958706353794861e-05, 'epoch': 3897.26}
+{'loss': 0.0018, 'grad_norm': 0.01989028975367546, 'learning_rate': 6.876078946702947e-05, 'epoch': 3904.11}
+{'loss': 0.0017, 'grad_norm': 0.017360202968120575, 'learning_rate': 6.793881489638886e-05, 'epoch': 3910.96}
+{'loss': 0.0017, 'grad_norm': 0.01660943776369095, 'learning_rate': 6.712115510924748e-05, 'epoch': 3917.81}
+{'loss': 0.0017, 'grad_norm': 0.014757195487618446, 'learning_rate': 6.630944763680993e-05, 'epoch': 3924.66}
+{'loss': 0.0017, 'grad_norm': 0.009794052690267563, 'learning_rate': 6.550045423988568e-05, 'epoch': 3931.51}
+{'loss': 0.0017, 'grad_norm': 0.0060658627189695835, 'learning_rate': 6.469582096363457e-05, 'epoch': 3938.36}
+{'loss': 0.0017, 'grad_norm': 0.010405067354440689, 'learning_rate': 6.389556276884564e-05, 'epoch': 3945.21}
+{'loss': 0.0017, 'grad_norm': 0.013218125328421593, 'learning_rate': 6.30996945349603e-05, 'epoch': 3952.05}
+{'loss': 0.0017, 'grad_norm': 0.017371350899338722, 'learning_rate': 6.230823105979638e-05, 'epoch': 3958.9}
+{'loss': 0.0017, 'grad_norm': 0.016527868807315826, 'learning_rate': 6.152118705927255e-05, 'epoch': 3965.75}
+{'loss': 0.0017, 'grad_norm': 0.008664388209581375, 'learning_rate': 6.074013795199363e-05, 'epoch': 3972.6}
+{'loss': 0.0017, 'grad_norm': 0.01763765700161457, 'learning_rate': 5.9961967807757096e-05, 'epoch': 3979.45}
+{'loss': 0.0019, 'grad_norm': 0.024369364604353905, 'learning_rate': 5.9189803713280694e-05, 'epoch': 3986.3}
+{'loss': 0.0017, 'grad_norm': 0.009676526300609112, 'learning_rate': 5.8420565184378885e-05, 'epoch': 3993.15}
+{'loss': 0.0017, 'grad_norm': 0.019528944045305252, 'learning_rate': 5.765581841465968e-05, 'epoch': 4000.0}
+{'loss': 0.0017, 'grad_norm': 0.005397968925535679, 'learning_rate': 5.689557762328989e-05, 'epoch': 4006.85}
+{'loss': 0.0017, 'grad_norm': 0.013820010237395763, 'learning_rate': 5.613985694565557e-05, 'epoch': 4013.7}
+{'loss': 0.0017, 'grad_norm': 0.018985603004693985, 'learning_rate': 5.5388670433098915e-05, 'epoch': 4020.55}
+{'loss': 0.0017, 'grad_norm': 0.006105318199843168, 'learning_rate': 5.464203205265691e-05, 'epoch': 4027.4}
+{'loss': 0.0017, 'grad_norm': 0.003742441302165389, 'learning_rate': 5.389995568680188e-05, 'epoch': 4034.25}
+{'loss': 0.0017, 'grad_norm': 0.010275251232087612, 'learning_rate': 5.316245513318316e-05, 'epoch': 4041.1}
+{'loss': 0.0017, 'grad_norm': 0.021573059260845184, 'learning_rate': 5.242954410437057e-05, 'epoch': 4047.95}
+{'loss': 0.0017, 'grad_norm': 0.004955785349011421, 'learning_rate': 5.170268824039235e-05, 'epoch': 4054.79}
+{'loss': 0.0017, 'grad_norm': 0.02202296257019043, 'learning_rate': 5.097898781046579e-05, 'epoch': 4061.64}
+{'loss': 0.0017, 'grad_norm': 0.012491817586123943, 'learning_rate': 5.025991750321092e-05, 'epoch': 4068.49}
+{'loss': 0.0017, 'grad_norm': 0.012240421026945114, 'learning_rate': 4.954691489909862e-05, 'epoch': 4075.34}
+{'loss': 0.0017, 'grad_norm': 0.021735599264502525, 'learning_rate': 4.88371355337697e-05, 'epoch': 4082.19}
+{'loss': 0.0017, 'grad_norm': 0.017598770558834076, 'learning_rate': 4.813202611521683e-05, 'epoch': 4089.04}
+{'loss': 0.0017, 'grad_norm': 0.021353594958782196, 'learning_rate': 4.743159975375184e-05, 'epoch': 4095.89}
+{'loss': 0.0017, 'grad_norm': 0.00524471141397953, 'learning_rate': 4.6735869472612756e-05, 'epoch': 4102.74}
+{'loss': 0.0017, 'grad_norm': 0.008491256274282932, 'learning_rate': 4.6046225542099556e-05, 'epoch': 4109.59}
+{'loss': 0.0017, 'grad_norm': 0.018070481717586517, 'learning_rate': 4.535991668533083e-05, 'epoch': 4116.44}
+{'loss': 0.0018, 'grad_norm': 0.002918291138485074, 'learning_rate': 4.4679700843261054e-05, 'epoch': 4123.29}
+{'loss': 0.0017, 'grad_norm': 0.015032988972961903, 'learning_rate': 4.400286435158057e-05, 'epoch': 4130.14}
+{'loss': 0.0017, 'grad_norm': 0.004597305785864592, 'learning_rate': 4.333078769173602e-05, 'epoch': 4136.99}
+{'loss': 0.0017, 'grad_norm': 0.007318755146116018, 'learning_rate': 4.266348335985119e-05, 'epoch': 4143.84}
+{'loss': 0.0017, 'grad_norm': 0.0171267781406641, 'learning_rate': 4.200096376331642e-05, 'epoch': 4150.68}
+{'loss': 0.0017, 'grad_norm': 0.006315094884485006, 'learning_rate': 4.134324122055812e-05, 'epoch': 4157.53}
+{'loss': 0.0017, 'grad_norm': 0.004208612721413374, 'learning_rate': 4.069032796080959e-05, 'epoch': 4164.38}
+{'loss': 0.0017, 'grad_norm': 0.006291469093412161, 'learning_rate': 4.0042236123883745e-05, 'epoch': 4171.23}
+{'loss': 0.0017, 'grad_norm': 0.015424910932779312, 'learning_rate': 3.939897775994708e-05, 'epoch': 4178.08}
+{'loss': 0.0017, 'grad_norm': 0.02401326783001423, 'learning_rate': 3.8760564829296326e-05, 'epoch': 4184.93}
+{'loss': 0.0017, 'grad_norm': 0.011023564264178276, 'learning_rate': 3.812700920213529e-05, 'epoch': 4191.78}
+{'loss': 0.0017, 'grad_norm': 0.020389672368764877, 'learning_rate': 3.749832265835442e-05, 'epoch': 4198.63}
+{'loss': 0.0017, 'grad_norm': 0.004464642610400915, 'learning_rate': 3.6874516887312045e-05, 'epoch': 4205.48}
+{'loss': 0.0017, 'grad_norm': 0.003915100358426571, 'learning_rate': 3.6255603487616716e-05, 'epoch': 4212.33}
+{'loss': 0.0017, 'grad_norm': 0.008709743618965149, 'learning_rate': 3.564281708427852e-05, 'epoch': 4219.18}
+{'loss': 0.0017, 'grad_norm': 0.005295812152326107, 'learning_rate': 3.5033713017103816e-05, 'epoch': 4226.03}
+{'loss': 0.0017, 'grad_norm': 0.027894506230950356, 'learning_rate': 3.442953554789679e-05, 'epoch': 4232.88}
+{'loss': 0.0017, 'grad_norm': 0.009058594703674316, 'learning_rate': 3.383029591031129e-05, 'epoch': 4239.73}
+{'loss': 0.0017, 'grad_norm': 0.010333623737096786, 'learning_rate': 3.323718888108309e-05, 'epoch': 4246.58}
+{'loss': 0.0017, 'grad_norm': 0.0027087978087365627, 'learning_rate': 3.264784830923863e-05, 'epoch': 4253.42}
+{'loss': 0.0017, 'grad_norm': 0.011742819100618362, 'learning_rate': 3.2063478696462855e-05, 'epoch': 4260.27}
+{'loss': 0.0017, 'grad_norm': 0.005391536746174097, 'learning_rate': 3.148524470465633e-05, 'epoch': 4267.12}
+{'loss': 0.0017, 'grad_norm': 0.008890470489859581, 'learning_rate': 3.091083951758637e-05, 'epoch': 4273.97}
+{'loss': 0.0017, 'grad_norm': 0.021310102194547653, 'learning_rate': 3.034143758631261e-05, 'epoch': 4280.82}
+{'loss': 0.0017, 'grad_norm': 0.02180073782801628, 'learning_rate': 2.9777049497896843e-05, 'epoch': 4287.67}
+{'loss': 0.0016, 'grad_norm': 0.0045602209866046906, 'learning_rate': 2.92176857461767e-05, 'epoch': 4294.52}
+{'loss': 0.0017, 'grad_norm': 0.013483298942446709, 'learning_rate': 2.8663356731570807e-05, 'epoch': 4301.37}
+{'loss': 0.0017, 'grad_norm': 0.013099370524287224, 'learning_rate': 2.8114072760885474e-05, 'epoch': 4308.22}
+{'loss': 0.0016, 'grad_norm': 0.0063468217849731445, 'learning_rate': 2.7569844047123013e-05, 'epoch': 4315.07}
+{'loss': 0.0017, 'grad_norm': 0.0041869403794407845, 'learning_rate': 2.7031753974043423e-05, 'epoch': 4321.92}
+{'loss': 0.0017, 'grad_norm': 0.011300227604806423, 'learning_rate': 2.6497655876226154e-05, 'epoch': 4328.77}
+{'loss': 0.0016, 'grad_norm': 0.006276659667491913, 'learning_rate': 2.5968643089857655e-05, 'epoch': 4335.62}
+{'loss': 0.0017, 'grad_norm': 0.009020917117595673, 'learning_rate': 2.5444725451032e-05, 'epoch': 4342.47}
+{'loss': 0.0016, 'grad_norm': 0.014676609076559544, 'learning_rate': 2.4926945225500862e-05, 'epoch': 4349.32}
+{'loss': 0.0017, 'grad_norm': 0.0033646312076598406, 'learning_rate': 2.4413236772284774e-05, 'epoch': 4356.16}
+{'loss': 0.0016, 'grad_norm': 0.003010864369571209, 'learning_rate': 2.390465238674958e-05, 'epoch': 4363.01}
+{'loss': 0.0016, 'grad_norm': 0.003636552020907402, 'learning_rate': 2.3401201525157952e-05, 'epoch': 4369.86}
+{'loss': 0.0016, 'grad_norm': 0.00700517650693655, 'learning_rate': 2.290289354832332e-05, 'epoch': 4376.71}
+{'loss': 0.0016, 'grad_norm': 0.018504785373806953, 'learning_rate': 2.2409737721435994e-05, 'epoch': 4383.56}
+{'loss': 0.0016, 'grad_norm': 0.0112240519374609, 'learning_rate': 2.1921743213890786e-05, 'epoch': 4390.41}
+{'loss': 0.0016, 'grad_norm': 0.015548386611044407, 'learning_rate': 2.1438919099116503e-05, 'epoch': 4397.26}
+{'loss': 0.0016, 'grad_norm': 0.01865721121430397, 'learning_rate': 2.0962224468966482e-05, 'epoch': 4404.11}
+{'loss': 0.0016, 'grad_norm': 0.004552791360765696, 'learning_rate': 2.0489757590013722e-05, 'epoch': 4410.96}
+{'loss': 0.0016, 'grad_norm': 0.01016608439385891, 'learning_rate': 2.0022487729171855e-05, 'epoch': 4417.81}
+{'loss': 0.0016, 'grad_norm': 0.003824160434305668, 'learning_rate': 1.9560423574530095e-05, 'epoch': 4424.66}
+{'loss': 0.0016, 'grad_norm': 0.003802424995228648, 'learning_rate': 1.9103573717386444e-05, 'epoch': 4431.51}
+{'loss': 0.0016, 'grad_norm': 0.0036574481055140495, 'learning_rate': 1.8652844688274682e-05, 'epoch': 4438.36}
+{'loss': 0.0016, 'grad_norm': 0.02056579291820526, 'learning_rate': 1.8206438341365204e-05, 'epoch': 4445.21}
+{'loss': 0.0016, 'grad_norm': 0.005148377735167742, 'learning_rate': 1.7766148566295814e-05, 'epoch': 4452.05}
+{'loss': 0.0016, 'grad_norm': 0.004542794544249773, 'learning_rate': 1.7330218863769364e-05, 'epoch': 4458.9}
+{'loss': 0.0016, 'grad_norm': 0.0026853352319449186, 'learning_rate': 1.68995449256088e-05, 'epoch': 4465.75}
+{'loss': 0.0016, 'grad_norm': 0.003874389920383692, 'learning_rate': 1.6474134759464396e-05, 'epoch': 4472.6}
+{'loss': 0.0016, 'grad_norm': 0.01526325661689043, 'learning_rate': 1.6053996275115422e-05, 'epoch': 4479.45}
+{'loss': 0.0016, 'grad_norm': 0.015218079090118408, 'learning_rate': 1.563913728432331e-05, 'epoch': 4486.3}
+{'loss': 0.0016, 'grad_norm': 0.02131347358226776, 'learning_rate': 1.5229565500686159e-05, 'epoch': 4493.15}
+{'loss': 0.0016, 'grad_norm': 0.008891105651855469, 'learning_rate': 1.4825288539495495e-05, 'epoch': 4500.0}
+{'loss': 0.0016, 'grad_norm': 0.007552501745522022, 'learning_rate': 1.44263139175946e-05, 'epoch': 4506.85}
+{'loss': 0.0016, 'grad_norm': 0.003212498966604471, 'learning_rate': 1.4033431078947977e-05, 'epoch': 4513.7}
+{'loss': 0.0016, 'grad_norm': 0.0033276411704719067, 'learning_rate': 1.364507265027326e-05, 'epoch': 4520.55}
+{'loss': 0.0016, 'grad_norm': 0.00449879327788949, 'learning_rate': 1.3262038504997774e-05, 'epoch': 4527.4}
+{'loss': 0.0016, 'grad_norm': 0.008849425241351128, 'learning_rate': 1.288433576499075e-05, 'epoch': 4534.25}
+{'loss': 0.0016, 'grad_norm': 0.0029999795369803905, 'learning_rate': 1.251345026688325e-05, 'epoch': 4541.1}
+{'loss': 0.0016, 'grad_norm': 0.009298411197960377, 'learning_rate': 1.2146409911310595e-05, 'epoch': 4547.95}
+{'loss': 0.0016, 'grad_norm': 0.017701735720038414, 'learning_rate': 1.1784721704224776e-05, 'epoch': 4554.79}
+{'loss': 0.0016, 'grad_norm': 0.00290138297714293, 'learning_rate': 1.1428392370603568e-05, 'epoch': 4561.64}
+{'loss': 0.0016, 'grad_norm': 0.01237719226628542, 'learning_rate': 1.107742853578555e-05, 'epoch': 4568.49}
+{'loss': 0.0016, 'grad_norm': 0.004688061773777008, 'learning_rate': 1.0731836725347032e-05, 'epoch': 4575.34}
+{'loss': 0.0016, 'grad_norm': 0.007320706266909838, 'learning_rate': 1.0391623364980595e-05, 'epoch': 4582.19}
+{'loss': 0.0016, 'grad_norm': 0.003114502876996994, 'learning_rate': 1.0056794780375744e-05, 'epoch': 4589.04}
+{'loss': 0.0016, 'grad_norm': 0.001838158699683845, 'learning_rate': 9.727357197101104e-06, 'epoch': 4595.89}
+{'loss': 0.0016, 'grad_norm': 0.008369926363229752, 'learning_rate': 9.40331674048892e-06, 'epoch': 4602.74}
+{'loss': 0.0016, 'grad_norm': 0.0027032073121517897, 'learning_rate': 9.084679435521037e-06, 'epoch': 4609.59}
+{'loss': 0.0016, 'grad_norm': 0.007719965185970068, 'learning_rate': 8.771451206716729e-06, 'epoch': 4616.44}
+{'loss': 0.0016, 'grad_norm': 0.008077955804765224, 'learning_rate': 8.463637878022823e-06, 'epoch': 4623.29}
+{'loss': 0.0016, 'grad_norm': 0.0027317542117089033, 'learning_rate': 8.161245172705245e-06, 'epoch': 4630.14}
+{'loss': 0.0016, 'grad_norm': 0.013778326101601124, 'learning_rate': 7.864278713242611e-06, 'epoch': 4636.99}
+{'loss': 0.0016, 'grad_norm': 0.0070420727133750916, 'learning_rate': 7.572744021221744e-06, 'epoch': 4643.84}
+{'loss': 0.0016, 'grad_norm': 0.004760297015309334, 'learning_rate': 7.2877800692885404e-06, 'epoch': 4650.68}
+{'loss': 0.0016, 'grad_norm': 0.023410016670823097, 'learning_rate': 7.007103292340455e-06, 'epoch': 4657.53}
+{'loss': 0.0016, 'grad_norm': 0.0038947435095906258, 'learning_rate': 6.7318742205548785e-06, 'epoch': 4664.38}
+{'loss': 0.0016, 'grad_norm': 0.005525896325707436, 'learning_rate': 6.462097971348767e-06, 'epoch': 4671.23}
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Wed Jun 19 09:01:28 2024
+Driver Version                            : 535.161.08
+CUDA Version                              : 12.2
+
+Attached GPUs                             : 2
+GPU 00000000:01:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 524997
+            GPU Utilization               : 94 %
+            Memory Utilization            : 66 %
+            Max memory usage              : 49982 MiB
+            Time                          : 0 ms
+            Is Running                    : 1
+
+GPU 00000000:C1:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 524998
+            GPU Utilization               : 94 %
+            Memory Utilization            : 66 %
+            Max memory usage              : 49982 MiB
+            Time                          : 0 ms
+            Is Running                    : 1
+
+Wed Jun 19 09:01:28 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.161.08             Driver Version: 535.161.08   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  | 00000000:01:00.0 Off |                    0 |
+| N/A   57C    P0             357W / 500W |  49894MiB / 81920MiB |     89%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          On  | 00000000:C1:00.0 Off |                    0 |
+| N/A   52C    P0             346W / 500W |  49882MiB / 81920MiB |     89%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A    524997      C   ...an.li/.conda/envs/new/bin/python3.9    49886MiB |
+|    1   N/A  N/A    524998      C   ...an.li/.conda/envs/new/bin/python3.9    49874MiB |
++---------------------------------------------------------------------------------------+
+06/19/2024 09:04:15 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: True
+06/19/2024 09:04:15 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=5000.0,
+eval_strategy=no,
+evaluation_strategy=None,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0006,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_5000/runs/Jun19_09-04-15_cn-g017.server.mila.quebec,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=cosine,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=5000.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=/network/scratch/z/zixuan.li/gpt2_ckpts_5000,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=16,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=/network/scratch/z/zixuan.li/gpt2_ckpts_5000,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=5000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=715,
+weight_decay=0.0,
+)
+06/19/2024 09:04:15 - INFO - __main__ - Checkpoint detected, resuming training at /network/scratch/z/zixuan.li/gpt2_ckpts_5000/checkpoint-340000. To avoid this behavior, change the `--output_dir` or add `--overwrite_output_dir` to train from scratch.
+06/19/2024 09:04:15 - WARNING - __main__ - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, 16-bits training: True
+06/19/2024 09:04:18 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+06/19/2024 09:04:18 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/19/2024 09:04:18 - INFO - datasets.builder - Found cached dataset wikitext (/home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3)
+06/19/2024 09:04:18 - INFO - datasets.info - Loading Dataset info from /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3
+06/19/2024 09:04:18 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/19/2024 09:04:18 - WARNING - __main__ - You are instantiating a new config instance from scratch.
+06/19/2024 09:04:19 - INFO - __main__ - Training new model from scratch - Total size=118.68M params
+06/19/2024 09:04:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-24f5302b824080b8.arrow
+06/19/2024 09:04:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-38a62f26547cea30.arrow
+06/19/2024 09:04:19 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-c75285d115ff6176.arrow
+06/19/2024 09:04:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-11021e805cc2f0aa.arrow
+06/19/2024 09:04:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-05e2d75c0aaf4f13.arrow
+06/19/2024 09:04:20 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /home/mila/z/zixuan.li/.cache/huggingface/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/cache-e8014a8ce34ae12b.arrow
+{'loss': 0.0016, 'grad_norm': 0.0038922412786632776, 'learning_rate': 6.7318742205548785e-06, 'epoch': 4664.38}
+{'loss': 0.0016, 'grad_norm': 0.0057565076276659966, 'learning_rate': 6.462097971348767e-06, 'epoch': 4671.23}
+{'loss': 0.0018, 'grad_norm': 0.009150912053883076, 'learning_rate': 6.198302747368045e-06, 'epoch': 4678.08}
+{'loss': 0.0016, 'grad_norm': 0.002322641434147954, 'learning_rate': 5.939436159591348e-06, 'epoch': 4684.93}
+{'loss': 0.0016, 'grad_norm': 0.0021132919937372208, 'learning_rate': 5.6860371284336735e-06, 'epoch': 4691.78}
+{'loss': 0.0016, 'grad_norm': 0.0057241423055529594, 'learning_rate': 5.43811036541949e-06, 'epoch': 4698.63}
+{'loss': 0.0016, 'grad_norm': 0.008145913481712341, 'learning_rate': 5.195660480325825e-06, 'epoch': 4705.48}
+{'loss': 0.0016, 'grad_norm': 0.0042427279986441135, 'learning_rate': 4.958691981096397e-06, 'epoch': 4712.33}
+{'loss': 0.0016, 'grad_norm': 0.007586958818137646, 'learning_rate': 4.727209273757848e-06, 'epoch': 4719.18}
+{'loss': 0.0016, 'grad_norm': 0.002387227723374963, 'learning_rate': 4.5012166623378474e-06, 'epoch': 4726.03}
+{'loss': 0.0016, 'grad_norm': 0.0031653018668293953, 'learning_rate': 4.280718348785117e-06, 'epoch': 4732.88}
+{'loss': 0.0016, 'grad_norm': 0.005053128581494093, 'learning_rate': 4.065718432891196e-06, 'epoch': 4739.73}
+{'loss': 0.0016, 'grad_norm': 0.0027694699820131063, 'learning_rate': 3.85622091221427e-06, 'epoch': 4746.58}
+{'loss': 0.0016, 'grad_norm': 0.00635411636903882, 'learning_rate': 3.6522296820047923e-06, 'epoch': 4753.42}
+{'loss': 0.0016, 'grad_norm': 0.018331976607441902, 'learning_rate': 3.453748535133183e-06, 'epoch': 4760.27}
+{'loss': 0.0016, 'grad_norm': 0.016541600227355957, 'learning_rate': 3.2607811620191436e-06, 'epoch': 4767.12}
+{'loss': 0.0016, 'grad_norm': 0.0022851305548101664, 'learning_rate': 3.0733311505631854e-06, 'epoch': 4773.97}
+{'loss': 0.0016, 'grad_norm': 0.010194062255322933, 'learning_rate': 2.891401986079811e-06, 'epoch': 4780.82}
+{'loss': 0.0016, 'grad_norm': 0.010872459970414639, 'learning_rate': 2.714997051232737e-06, 'epoch': 4787.67}
+{'loss': 0.0016, 'grad_norm': 0.0036158228758722544, 'learning_rate': 2.5441196259720743e-06, 'epoch': 4794.52}
+{'loss': 0.0016, 'grad_norm': 0.004453549161553383, 'learning_rate': 2.3787728874732458e-06, 'epoch': 4801.37}
+{'loss': 0.0016, 'grad_norm': 0.008578566834330559, 'learning_rate': 2.2189599100779333e-06, 'epoch': 4808.22}
+{'loss': 0.0016, 'grad_norm': 0.00458038505166769, 'learning_rate': 2.0646836652369882e-06, 'epoch': 4815.07}
+{'loss': 0.0016, 'grad_norm': 0.01600751280784607, 'learning_rate': 1.9159470214550777e-06, 'epoch': 4821.92}
+{'loss': 0.0016, 'grad_norm': 0.008044782094657421, 'learning_rate': 1.7727527442373601e-06, 'epoch': 4828.77}
+{'loss': 0.0016, 'grad_norm': 0.00355755933560431, 'learning_rate': 1.6351034960381925e-06, 'epoch': 4835.62}
+{'loss': 0.0016, 'grad_norm': 0.004977872129529715, 'learning_rate': 1.5030018362115703e-06, 'epoch': 4842.47}
+{'loss': 0.0016, 'grad_norm': 0.0025303582660853863, 'learning_rate': 1.3764502209632987e-06, 'epoch': 4849.32}
+{'loss': 0.0016, 'grad_norm': 0.014567658305168152, 'learning_rate': 1.255451003305763e-06, 'epoch': 4856.16}
+{'loss': 0.0016, 'grad_norm': 0.007934529334306717, 'learning_rate': 1.1400064330138626e-06, 'epoch': 4863.01}
+{'loss': 0.0016, 'grad_norm': 0.0030558304861187935, 'learning_rate': 1.030118656583212e-06, 'epoch': 4869.86}
+{'loss': 0.0016, 'grad_norm': 0.002429675543680787, 'learning_rate': 9.257897171903395e-07, 'epoch': 4876.71}
+{'loss': 0.0016, 'grad_norm': 0.002936805598437786, 'learning_rate': 8.270215546546832e-07, 'epoch': 4883.56}
+{'loss': 0.0016, 'grad_norm': 0.0036652092821896076, 'learning_rate': 7.338160054023212e-07, 'epoch': 4890.41}
+{'loss': 0.0016, 'grad_norm': 0.0022671788465231657, 'learning_rate': 6.461748024322311e-07, 'epoch': 4897.26}
+{'loss': 0.0016, 'grad_norm': 0.0023168993648141623, 'learning_rate': 5.640995752836164e-07, 'epoch': 4904.11}
+{'loss': 0.0016, 'grad_norm': 0.007886029779911041, 'learning_rate': 4.877393081268443e-07, 'epoch': 4910.96}
+{'loss': 0.0016, 'grad_norm': 0.014525853097438812, 'learning_rate': 4.1678936805155106e-07, 'epoch': 4917.81}
+{'loss': 0.0016, 'grad_norm': 0.006870946381241083, 'learning_rate': 3.5140966883019373e-07, 'epoch': 4924.66}
+{'loss': 0.0016, 'grad_norm': 0.0024565907660871744, 'learning_rate': 2.9160142608724013e-07, 'epoch': 4931.51}
+{'loss': 0.0016, 'grad_norm': 0.011010793969035149, 'learning_rate': 2.3736575185535622e-07, 'epoch': 4938.36}
+{'loss': 0.0016, 'grad_norm': 0.01256359089165926, 'learning_rate': 1.8879541570090416e-07, 'epoch': 4945.21}
+{'loss': 0.0016, 'grad_norm': 0.002280186163261533, 'learning_rate': 1.4569665032307942e-07, 'epoch': 4952.05}
+{'loss': 0.0016, 'grad_norm': 0.0037163030356168747, 'learning_rate': 1.0817316630773454e-07, 'epoch': 4958.9}
+{'loss': 0.0016, 'grad_norm': 0.007710532750934362, 'learning_rate': 7.622566134031227e-08, 'epoch': 4965.75}
+{'loss': 0.0016, 'grad_norm': 0.004373254720121622, 'learning_rate': 4.99019055311467e-08, 'epoch': 4972.6}
+{'loss': 0.0016, 'grad_norm': 0.004513846244663, 'learning_rate': 2.909688245424924e-08, 'epoch': 4979.45}
+{'loss': 0.0016, 'grad_norm': 0.00763727817684412, 'learning_rate': 1.3869308714464789e-08, 'epoch': 4986.3}
+{'loss': 0.0016, 'grad_norm': 0.0028684246353805065, 'learning_rate': 4.219467442612145e-09, 'epoch': 4993.15}
+{'loss': 0.0016, 'grad_norm': 0.0022004146594554186, 'learning_rate': 1.4753806110157085e-10, 'epoch': 5000.0}
+{'train_runtime': 11537.7402, 'train_samples_per_second': 1004.529, 'train_steps_per_second': 31.635, 'train_loss': 0.00011025490548512707, 'epoch': 5000.0}
+***** train metrics *****
+  epoch                    =       5000.0
+  total_flos               = 5684589935GF
+  train_loss               =       0.0001
+  train_runtime            =   3:12:17.74
+  train_samples            =         2318
+  train_samples_per_second =     1004.529
+  train_steps_per_second   =       31.635
+06/19/2024 12:16:41 - INFO - __main__ - *** Evaluate ***
+***** eval metrics *****
+  epoch                   =           5000.0
+  eval_accuracy           =           0.2233
+  eval_loss               =          24.7861
+  eval_runtime            =       0:00:02.21
+  eval_samples            =              240
+  eval_samples_per_second =          108.551
+  eval_steps_per_second   =            3.618
+  perplexity              = 58140871395.5647
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Wed Jun 19 12:16:48 2024
+Driver Version                            : 535.161.08
+CUDA Version                              : 12.2
+
+Attached GPUs                             : 2
+GPU 00000000:41:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 939428
+            GPU Utilization               : 94 %
+            Memory Utilization            : 65 %
+            Max memory usage              : 49962 MiB
+            Time                          : 11552333 ms
+            Is Running                    : 0
+        Process ID                        : 939429
+            GPU Utilization               : 0 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 510 MiB
+            Time                          : 11552969 ms
+            Is Running                    : 0
+
+GPU 00000000:81:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 939429
+            GPU Utilization               : 94 %
+            Memory Utilization            : 65 %
+            Max memory usage              : 49974 MiB
+            Time                          : 11552907 ms
+            Is Running                    : 0
+
+Wed Jun 19 12:16:48 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.161.08             Driver Version: 535.161.08   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  | 00000000:41:00.0 Off |                    0 |
+| N/A   37C    P0              95W / 500W |      0MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          On  | 00000000:81:00.0 Off |                    0 |
+| N/A   44C    P0              93W / 500W |      0MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
