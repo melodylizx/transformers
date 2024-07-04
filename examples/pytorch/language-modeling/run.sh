@@ -10,7 +10,8 @@
 #SBATCH --job-name=run1
 
 
-conda activate llm
+source llm/bin/activate
+cd projects/def-tyrell/melodyli/transformers/examples/pytorch/language-modeling/
 
 torchrun --nproc_per_node=2 run_clm.py \
     --dataset_name wikitext \
