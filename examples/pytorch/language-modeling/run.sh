@@ -1,8 +1,6 @@
-#!/usr/bin/env bash
-#####SBATCH --array=0-11%20
-#####SBATCH --array=0-1%20
-#SBATCH --gres=gpu:a100l:2
-#SBATCH --mem=40GB
+#!/bin/bash
+#SBATCH --account=rrg-tyrell-ab
+#SBATCH --mem=32G       
 ######SBATCH --mem=60GB
 ######SBATCH --time=48:00:00
 #BATCH --time=120:00:00
