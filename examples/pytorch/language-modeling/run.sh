@@ -1,22 +1,18 @@
 #!/usr/bin/env bash
 #####SBATCH --array=0-11%20
 #####SBATCH --array=0-1%20
-#SBATCH --partition=main
-######SBATCH --gres=gpu:rtx8000:1
 #SBATCH --gres=gpu:a100l:2
 #SBATCH --mem=40GB
 ######SBATCH --mem=60GB
-######SBATCH --time=6:30:00
-#SBATCH --time=48:00:00
-######SBATCH --time=120:00:00
+######SBATCH --time=48:00:00
+#BATCH --time=120:00:00
 #SBATCH --cpus-per-gpu=2
 #SBATCH --output=sbatch_out/run1.%A.%a.out
 #SBATCH --error=sbatch_err/run1.%A.%a.err
 #SBATCH --job-name=run1
 
-module --quiet load anaconda/3
 
-conda activate new
+conda activate llm
 
 torchrun --nproc_per_node=2 run_clm.py \
     --dataset_name wikitext \
