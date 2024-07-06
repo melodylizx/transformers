@@ -11,7 +11,7 @@
 
 
 source llm/bin/activate
-cd projects/def-tyrell/melodyli/transformers/examples/pytorch/language-modeling/
+#cd projects/def-tyrell/melodyli/transformers/examples/pytorch/language-modeling/
 
 torchrun --nproc_per_node=4 run_clm.py \
     --dataset_name wikitext \
