@@ -3,7 +3,7 @@
 #SBATCH --mem=32G       
 #SBATCH --gres=gpu:4                   # Ask for 1 GPU
 ######SBATCH --time=48:00:00
-#BATCH --time=120:00:00
+#SBATCH --time=120:00:00
 #SBATCH --cpus-per-gpu=2
 #SBATCH --output=sbatch_out/run1.%A.%a.out
 #SBATCH --error=sbatch_err/run1.%A.%a.err
