@@ -13,7 +13,7 @@
 source llm/bin/activate
 cd projects/def-tyrell/melodyli/transformers/examples/pytorch/language-modeling/
 
-torchrun --nproc_per_node=2 run_clm.py \
+torchrun --nproc_per_node=4 run_clm.py \
     --dataset_name wikitext \
     --dataset_config_name wikitext-2-raw-v1 \
     --per_device_train_batch_size 24 \
