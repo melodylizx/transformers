@@ -20,7 +20,7 @@ torchrun --nproc_per_node=4 run_clm.py \
     --per_device_eval_batch_size 24 \
     --do_train \
     --do_eval \
-    --output_dir /network/scratch/z/zixuan.li/gpt2_ckpts_20000 \
+    --output_dir /home/melodyli/scratch/gpt2_ckpts_20000 \
     --model_type gpt2 \
     --tokenizer_name tokenizer.json \
     --num_train_epochs 20000 \
