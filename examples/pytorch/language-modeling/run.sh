@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --account=rrg-tyrell-ab
 #SBATCH --mem=32G       
-#SBATCH --gres=gpu:4                   # Ask for 1 GPU
+#SBATCH --gres=gpu:2                # Ask for 1 GPU
 ######SBATCH --time=48:00:00
 #SBATCH --time=120:00:00
 #SBATCH --cpus-per-gpu=2
