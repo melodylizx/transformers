@@ -5,7 +5,7 @@
 ######SBATCH --time=48:00:00
 #SBATCH --time=120:00:00
 #SBATCH --cpus-per-gpu=4
-#SBATCH -o /scratch/melody/slurm-%j.out
+#SBATCH -o /scratch/melodyli/slurm-%j.out
 
 
 source llm/bin/activate
@@ -21,7 +21,7 @@ torchrun --nproc_per_node=4 run_clm.py \
     --ddp_timeout 18000 \
     --do_train \
     --do_eval \
-    --output_dir /home/melodyli/scratch/ \
+    --output_dir /home/melodyli/scratch/gpt2_ckpts_20000 \
     --model_type gpt2 \
     --tokenizer_name tokenizer.json \
     --num_train_epochs 5 \
