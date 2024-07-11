@@ -16,8 +16,8 @@ cd projects/def-tyrell/melodyli/transformers/examples/pytorch/language-modeling/
 torchrun --nproc_per_node=4 run_clm.py \
     --dataset_name wikitext \
     --dataset_config_name wikitext-2-raw-v1 \
-    --per_device_train_batch_size 24 \
-    --per_device_eval_batch_size 24 \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 16 \
     --ddp_timeout 18000 \
     --do_train \
     --do_eval \
