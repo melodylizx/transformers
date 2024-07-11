@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --account=rrg-tyrell-ab
 #SBATCH --mem=60G       
-#SBATCH --gres=gpu:4              
+#SBATCH --gres=gpu:a100:4              
 ######SBATCH --time=48:00:00
 #SBATCH --time=120:00:00
 #SBATCH --cpus-per-gpu=4
-#SBATCH -o /scratch/melody/slurm-%j.out
+#SBATCH -o /scratch/melodyli/fineweb-slurm-%j.out
 
 
 source llm/bin/activate
