@@ -13,7 +13,7 @@ module load cuda/12.2
 module load arrow
 source llm/bin/activate
 cd projects/def-tyrell/melodyli/transformers/examples/pytorch/language-modeling/
-
+export HF_DATASETS_CACHE=$SCRATCH/llms/hf_cache
 
 torchrun --nproc_per_node=4 run_clm.py \
     --dataset_name wikitext \
