@@ -8,23 +8,25 @@
 #SBATCH -o /scratch/melodyli/wiki-slurm-%j.out
 
 
-source llm/bin/activate
+module load python/3.11.5
+module load cuda/12.2
 module load arrow
+source llm/bin/activate
 cd projects/def-tyrell/melodyli/transformers/examples/pytorch/language-modeling/
 
 
 torchrun --nproc_per_node=4 run_clm.py \
     --dataset_name wikitext \
     --dataset_config_name wikitext-2-raw-v1 \
-    --per_device_train_batch_size 16 \
-    --per_device_eval_batch_size 16 \
+    --per_device_train_batch_size 12 \
+    --per_device_eval_batch_size 12 \
     --ddp_timeout 18000 \
     --do_train \
     --do_eval \
     --output_dir /home/melodyli/scratch/gpt2_ckpts_20000 \
     --model_type gpt2 \
     --tokenizer_name tokenizer.json \
-    --num_train_epochs 5 \
+    --num_train_epochs 50 \
     --fp16 \
     --learning_rate 6e-4 \
     --lr_scheduler_type cosine \
